@@ -1,0 +1,1492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F1F4F7">
+<link rel="icon" type="image/png" href="img/logo-navy.png">
+<meta property="og:title" content="The Wilmington Arena Project">
+<meta property="og:description" content="The Wilmington Arena Project is a community-owned nonprofit working toward Wilmington, North Carolina's first multi-purpose arena.">
+<meta property="og:image" content="img/coastal-clash.jpg">
+<meta property="og:type" content="website">
+<title>Wilmington Arena Project</title>
+<meta name="description" content="The Wilmington Arena Project is a community-owned nonprofit working toward Wilmington, North Carolina's first multi-purpose arena.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600..900&family=Instrument+Sans:wdth,wght@75..100,400..700&family=Instrument+Serif&display=swap">
+<style>
+:root{
+  --ice:#F1F4F7; --paper:#FAFBFC; --frost:#E4EAF0;
+  --ink:#0A1A36; --ink-2:#33425C; --muted:#5B6981;
+  --navy:#0B1C3D; --navy-2:#06122A;
+  --red:#E0362C; --red-d:#B92920; --blue:#2D64B6; --sand:#ECE3D2;
+  --rule:rgba(10,26,54,.13); --rule-2:rgba(10,26,54,.22); --rule-l:rgba(255,255,255,.14);
+  --r:26px; --r-s:14px;
+  --gut:clamp(18px,4.2vw,64px);
+  --max:1380px;
+  --hdr:84px;
+  --f-d:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --f-s:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --f-b:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.19,1,.22,1);
+  --ease-2:cubic-bezier(.65,0,.35,1);
+  --sec:clamp(88px,11vw,168px);
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--ice);color:var(--ink);font:400 17px/1.6 var(--f-b);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:2.5px solid var(--red);outline-offset:3px;border-radius:6px}
+.skip{position:fixed;left:16px;top:-80px;z-index:200;background:var(--ink);color:#fff;padding:12px 18px;border-radius:10px;font-weight:600}
+.skip:focus{top:16px}
+.wrap{width:min(100% - 2*var(--gut),var(--max));margin-inline:auto}
+.grain{position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.32;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .05 0 0 0 0 .1 0 0 0 0 .2 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- type ---------- */
+.d{font-family:var(--f-d);font-weight:800;text-transform:uppercase;line-height:.86;letter-spacing:-.005em}
+.ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.ln>span{display:block;will-change:transform}
+.h1{font-size:clamp(3.6rem,9.4vw,9.6rem)}
+.h2{font-size:clamp(2.9rem,6.4vw,6.6rem)}
+.h3{font-family:var(--f-d);font-weight:800;text-transform:uppercase;line-height:.95;font-size:clamp(1.7rem,2.5vw,2.35rem);letter-spacing:.005em}
+.serif{font-family:var(--f-s);font-weight:400;letter-spacing:-.01em}
+.lead{font-size:clamp(1.08rem,1.35vw,1.28rem);line-height:1.55;color:var(--ink-2);max-width:38ch}
+.label{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--ink-2)}
+.label::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--red);flex:none}
+.on-dark,.dark{color:#fff}
+.dark .lead,.dark .label{color:rgba(255,255,255,.74)}
+.muted{color:var(--muted)}
+
+/* ---------- buttons & links ---------- */
+.btn{--bg:var(--ink);--fg:#fff;--fill:var(--red);--fg-h:#fff;position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 26px;border-radius:var(--r-s);background:var(--bg);color:var(--fg);font-weight:600;font-size:15.5px;letter-spacing:.005em;line-height:1;white-space:nowrap;transition:color .45s var(--ease),transform .25s var(--ease),box-shadow .45s var(--ease)}
+.btn::before{content:"";position:absolute;inset:-1px;z-index:-1;background:var(--fill);border-radius:inherit;transform:translateY(102%);transition:transform .6s var(--ease)}
+.btn:hover{color:var(--fg-h)}
+.btn:hover::before{transform:translateY(0)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{cursor:progress}
+.btn-red{--bg:var(--red);--fill:var(--navy)}
+.btn-ink{--bg:var(--ink);--fill:var(--red)}
+.btn-line{--bg:transparent;--fg:var(--ink);--fill:var(--ink);box-shadow:inset 0 0 0 1.5px var(--rule-2)}
+.btn-line:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.dark .btn-line{--fg:#fff;--fill:#fff;--fg-h:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.btn-lg{min-height:64px;padding:0 34px;font-size:17px}
+.btn-sm{min-height:46px;padding:0 20px;font-size:14.5px}
+.ar{position:relative;display:inline-block;width:18px;height:18px;overflow:hidden;flex:none}
+.ar svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .55s var(--ease)}
+.ar svg+svg{transform:translateX(-130%)}
+a:hover .ar svg:first-child,button:hover .ar svg:first-child{transform:translateX(130%)}
+a:hover .ar svg+svg,button:hover .ar svg+svg{transform:none}
+.ar.ne svg+svg{transform:translate(-130%,130%)}
+a:hover .ar.ne svg:first-child{transform:translate(130%,-130%)}
+a:hover .ar.ne svg+svg{transform:none}
+.mag{display:inline-block;will-change:transform}
+.tl{display:inline-flex;align-items:center;gap:10px;font-weight:600;padding-bottom:4px;background:linear-gradient(var(--red),var(--red)) 0 100%/0 2px no-repeat,linear-gradient(var(--rule-2),var(--rule-2)) 0 100%/100% 1.5px no-repeat;transition:background-size .6s var(--ease)}
+.tl:hover{background-size:100% 2px,100% 1.5px}
+.dark .tl{background:linear-gradient(var(--red),var(--red)) 0 100%/0 2px no-repeat,linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3)) 0 100%/100% 1.5px no-repeat}
+.dark .tl:hover{background-size:100% 2px,100% 1.5px}
+.actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;inset:0 0 auto;z-index:80;transition:transform .6s var(--ease),background-color .4s,box-shadow .4s}
+.hdr .bar{height:var(--hdr);display:flex;align-items:center;gap:28px;transition:height .45s var(--ease)}
+.hdr.scrolled{background:rgba(241,244,247,.96);box-shadow:0 1px 0 var(--rule)}
+.hdr.scrolled .bar{height:68px}
+.hdr.hide:not(.menu-open){transform:translateY(-101%)}
+.brand{display:block;flex:none;position:relative;z-index:2}
+.brand img{height:48px;width:auto;transition:height .45s var(--ease),opacity .3s}
+.hdr.scrolled .brand img{height:40px}
+.brand .lw{position:absolute;inset:0;opacity:0}
+.nav{display:flex;align-items:center;gap:clamp(18px,2.2vw,34px);margin-left:auto}
+.nav a.nl{position:relative;font-weight:550;font-size:15px;padding:12px 0;color:var(--ink)}
+.nav a.nl::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .55s var(--ease)}
+.nav a.nl:hover::after{transform:scaleX(1);transform-origin:left}
+.nav a.nl[aria-current]::after{transform:scaleX(1);background:var(--red)}
+.prog{position:absolute;left:0;right:0;bottom:0;height:2px;pointer-events:none}
+.prog i{display:block;height:100%;background:var(--red);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.menu-btn{display:none;margin-left:auto;position:relative;z-index:2;align-items:center;gap:12px;min-height:48px;padding:0 4px 0 14px;font-weight:600;font-size:15px}
+.burger{position:relative;width:26px;height:14px}
+.burger i{position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px;transition:transform .5s var(--ease),top .5s var(--ease)}
+.burger i:first-child{top:0}.burger i:last-child{top:12px}
+.menu-open .burger i:first-child{top:6px;transform:rotate(45deg)}
+.menu-open .burger i:last-child{top:6px;transform:rotate(-45deg)}
+.mm{position:fixed;inset:0;z-index:79;background:var(--navy);color:#fff;clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .8s var(--ease),visibility 0s .8s;display:flex;flex-direction:column;padding:calc(var(--hdr) + 28px) var(--gut) max(28px,env(safe-area-inset-bottom));overflow-y:auto}
+.mm.open{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path .8s var(--ease),visibility 0s}
+.mm nav{display:flex;flex-direction:column;border-top:1px solid var(--rule-l)}
+.mm nav a{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule-l);font-family:var(--f-d);font-weight:800;text-transform:uppercase;font-size:clamp(2.6rem,11vw,4.4rem);line-height:.95;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .7s var(--ease),color .3s}
+.mm nav a small{font:500 13px var(--f-b);color:rgba(255,255,255,.5);text-transform:none}
+.mm nav a[aria-current]{color:var(--red)}
+.mm.open nav a{opacity:1;transform:none;transition-delay:calc(.12s + var(--i)*.05s)}
+.mm-foot{margin-top:auto;padding-top:32px;display:grid;gap:18px;opacity:0;transition:opacity .6s .35s}
+.mm.open .mm-foot{opacity:1}
+.mm-foot .btn{width:100%}
+.mm-foot p{font-size:14px;color:rgba(255,255,255,.65)}
+.hdr.menu-open{background:transparent;box-shadow:none}
+.hdr.menu-open .brand .dk{opacity:0}.hdr.menu-open .brand .lw{opacity:1}
+.hdr.menu-open .menu-btn{color:#fff}
+@media (max-width:1020px){.nav{display:none}.menu-btn{display:inline-flex}}
+
+/* ---------- views ---------- */
+.view{display:none}
+.view.on{display:block}
+main{transition:opacity .28s var(--ease-2)}
+main:focus{outline:none}
+main.leaving{opacity:0}
+section{position:relative}
+.sec{padding-block:var(--sec)}
+.dark{background:var(--navy)}
+.paper{background:var(--paper)}
+.sandbg{background:var(--sand)}
+.sec-top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px clamp(28px,5vw,80px);align-items:end;margin-bottom:clamp(44px,6vw,84px)}
+@media (max-width:860px){.sec-top{grid-template-columns:1fr}}
+
+.media{position:relative;overflow:hidden;border-radius:var(--r);background:var(--frost);isolation:isolate}
+.media img,.fund img{filter:contrast(1.07) saturate(.86) brightness(.99)}
+.media::before{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(10,26,54,.1);background:linear-gradient(200deg,rgba(45,100,182,.06),rgba(11,28,61,.14))}
+.dark .media::before{box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.media img{width:100%;height:100%;object-fit:cover}
+.media.zoom img{transition:transform 1.2s var(--ease)}
+a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
+.cap{position:absolute;max-width:calc(100% - 28px);background:rgba(250,251,252,.95);color:var(--ink);font-size:13px;font-weight:600;line-height:1.3;padding:9px 13px;border-radius:10px}
+
+/* ---------- HOME: hero ---------- */
+.hero{padding:calc(var(--hdr) + clamp(28px,4.5vw,60px)) 0 0;min-height:min(100svh,1000px);display:flex;flex-direction:column;overflow:clip}
+.hero>.wrap:first-child{flex:1;display:flex}
+.hero-grid{display:grid;width:100%;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);grid-template-areas:"h art" "copy art";column-gap:clamp(24px,4vw,64px);row-gap:clamp(26px,3vw,40px);align-items:center}
+.hero-h{grid-area:h;align-self:end;font-size:clamp(3.7rem,9.2vw,9.6rem)}
+.hero-copy{grid-area:copy;align-self:start;display:grid;gap:28px}
+.hero-art{grid-area:art;position:relative;aspect-ratio:1/1.06;width:100%;max-width:660px;justify-self:end}
+.rink{position:absolute;inset:0;pointer-events:none}
+.rink .cl{position:absolute;left:50%;top:-6%;bottom:-60vh;width:2px;margin-left:-1px;background:var(--red)}
+.rink svg{position:absolute;inset:-4%;width:108%;height:108%;overflow:visible}
+.hero-ph{position:absolute;left:2%;right:10%;top:5%;aspect-ratio:4/3.9;z-index:2;box-shadow:0 50px 90px -46px rgba(10,26,54,.55)}
+.hero-ph img{object-position:44% 50%}
+.hero-ph::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(180deg,transparent,rgba(6,18,42,.72));pointer-events:none}
+.ph-cap{position:absolute;z-index:2;left:clamp(16px,2vw,24px);bottom:clamp(16px,2vw,24px);display:grid;gap:2px;color:rgba(255,255,255,.8);font-size:13px;line-height:1.35}
+.ph-cap b{font-family:var(--f-d);font-weight:800;text-transform:uppercase;font-size:clamp(1.25rem,1.7vw,1.6rem);line-height:1;color:#fff;letter-spacing:.01em}
+.hero-inset{position:absolute;z-index:3;width:41%;right:0;bottom:2%;margin:0;padding:7px 7px 0;background:var(--paper);border-radius:calc(var(--r) - 4px);box-shadow:0 30px 60px -28px rgba(10,26,54,.5),0 0 0 1px var(--rule)}
+.hero-inset .media{aspect-ratio:465/300;border-radius:calc(var(--r) - 10px)}
+.hero-inset figcaption{display:flex;justify-content:space-between;gap:10px;padding:10px 6px 11px;font-size:12px;font-weight:600;color:var(--ink-2)}
+.hero-inset figcaption span:first-child{color:var(--ink)}
+.hero-inset figcaption span:first-child::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:8px;vertical-align:1px}
+.hero-foot{display:flex;flex-wrap:wrap;gap:12px 36px;align-items:center;justify-content:space-between;border-top:1px solid var(--rule);margin-top:clamp(36px,5vw,64px);padding-block:20px 22px;font-size:14px;color:var(--ink-2)}
+.hero-foot .meta{display:flex;flex-wrap:wrap;gap:8px 28px}
+.hero-foot .meta span{display:inline-flex;gap:10px;align-items:center}
+.hero-foot .meta span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.cue{display:inline-flex;align-items:center;gap:12px;font-weight:600}
+.cue i{position:relative;width:1.5px;height:30px;background:var(--rule-2);overflow:hidden}
+.cue i::after{content:"";position:absolute;left:-2.5px;top:0;width:6.5px;height:6.5px;border-radius:50%;background:var(--ink);animation:puck 2.2s var(--ease-2) infinite}
+@keyframes puck{0%{transform:translateY(-8px)}60%,100%{transform:translateY(32px)}}
+@media (max-width:900px){
+  .hero{min-height:0}
+  .hero-grid{grid-template-columns:1fr;grid-template-areas:"h" "art" "copy";row-gap:34px}
+  .hero-h{font-size:clamp(3.4rem,15.6vw,7.6rem)}
+  .hero-art{max-width:600px;justify-self:center;aspect-ratio:1/1.02;margin-top:4px}
+  .hero-ph{top:3%}
+  .rink .cl{top:-3%;bottom:-3%}
+  .hero-inset{right:-1%;bottom:0;width:44%}
+  .ph-cap{max-width:48%}
+}
+@media (max-width:560px){
+  .hero-copy .actions .btn,.hero-copy .actions .mag{flex:1 1 100%}
+  .hero-copy .actions .mag .btn{width:100%}
+  .hero-art{aspect-ratio:1/1.12}
+  .hero-ph{left:0;right:7%;top:2%}
+  .hero-inset{right:-4px;bottom:0;width:52%;padding:5px 5px 0}
+  .hero-inset figcaption{font-size:11px;padding:8px 4px 9px}
+  .ph-cap{font-size:12px;max-width:40%}
+  .hero-foot .cue{display:none}
+}
+
+/* ---------- statement ---------- */
+.stmt{padding-block:clamp(110px,15vw,220px);overflow:clip}
+.stmt .label{margin-bottom:clamp(28px,4vw,48px)}
+.stmt-t{position:relative;z-index:1;font-family:var(--f-s);font-size:clamp(2.1rem,4.2vw,4.4rem);line-height:1.06;letter-spacing:-.015em;max-width:22ch}
+.stmt-row{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:20px 40px;margin-top:clamp(40px,5vw,64px)}
+.stmt-mark{position:absolute;opacity:.55;right:calc(-1 * clamp(160px,18vw,300px));top:50%;width:clamp(320px,38vw,640px);aspect-ratio:1;margin-top:calc(clamp(320px,38vw,640px) / -2);pointer-events:none}
+.stmt-mark svg{width:100%;height:100%;overflow:visible}
+@media (max-width:860px){.stmt-mark{opacity:.4;right:-45%}}
+
+/* ---------- tabs ---------- */
+.tabs-row{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(36px,5vw,64px)}
+.tablist{position:relative;display:inline-flex;gap:6px;padding:6px;border-radius:16px;background:var(--frost)}
+.tablist button{position:relative;z-index:1;min-height:48px;padding:0 20px;border-radius:11px;font-weight:600;font-size:15px;color:var(--ink-2);transition:color .4s}
+.tablist button[aria-selected="true"]{color:#fff}
+.tablist .ind{position:absolute;z-index:0;top:6px;bottom:6px;left:0;width:0;border-radius:11px;background:var(--ink);transition:transform .6s var(--ease),width .6s var(--ease)}
+.dark .tablist{background:rgba(255,255,255,.08)}
+.dark .tablist button{color:rgba(255,255,255,.72)}
+.dark .tablist button[aria-selected="true"]{color:var(--ink)}
+.dark .tablist .ind{background:#fff}
+.panels{display:grid}
+.panel{grid-area:1/1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center;transition:opacity .6s var(--ease-2),transform .8s var(--ease),visibility 0s}
+.panel[hidden]{display:grid;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(14px);transition:opacity .3s var(--ease-2),transform .3s,visibility 0s .3s}
+.panel .media{aspect-ratio:16/9}
+.panel-copy{display:grid;gap:20px;align-content:center}
+.panel-copy .serif{font-size:clamp(1.9rem,3.2vw,2.9rem);line-height:1.08}
+.panel-copy p{color:var(--ink-2);max-width:44ch}
+.panels.plain .panel{display:block;grid-area:auto}
+.panels.plain .panel[hidden]{display:none}
+.kicker{font-family:var(--f-d);font-weight:800;text-transform:uppercase;font-size:20px;letter-spacing:.02em;color:var(--red)}
+@media (max-width:860px){.panel{grid-template-columns:1fr}.tablist{width:100%}.tablist button{flex:1;padding:0 10px}}
+
+/* ---------- mobile arena feature ---------- */
+.mob{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(36px,6vw,96px);align-items:start}
+.mob-copy{display:grid;gap:30px;position:sticky;top:110px}
+.mob-media{display:grid;gap:clamp(24px,3vw,40px)}
+.mob-media .m1{aspect-ratio:532/258}
+.who{list-style:none;border-top:1.5px solid var(--ink)}
+.who li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--rule);font-weight:600;font-size:17px}
+.who li span{color:var(--muted);font-weight:400;font-size:15px;text-align:right}
+@media (max-width:900px){.mob{grid-template-columns:1fr}.mob-copy{position:static}}
+@media (max-width:480px){.who li{flex-direction:column;align-items:flex-start;gap:2px}.who li span{text-align:left}}
+
+/* ---------- arena rising ---------- */
+.rising{overflow:clip}
+.rise-pin{display:flex;flex-direction:column;justify-content:center;padding-block:var(--sec) clamp(56px,7vw,96px)}
+.rise-track{display:flex;gap:clamp(18px,2vw,30px);align-items:center;overflow-x:auto;scroll-snap-type:x mandatory;padding-inline:var(--gut);scroll-padding-inline:var(--gut);padding-bottom:44px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent}
+.rising.pinned .rise-pin{height:100vh;padding-block:0}
+.rising.pinned .rise-track{overflow:visible;scroll-snap-type:none;width:max-content;will-change:transform;padding-left:max(var(--gut),calc((100vw - var(--max)) / 2))}
+.rise-intro{flex:none;width:min(540px,84vw);display:grid;gap:24px;padding-right:clamp(10px,3vw,60px);scroll-snap-align:start}
+.rise-intro .h2{font-size:clamp(3rem,6vw,6.2rem)}
+.rp{flex:none;position:relative;height:clamp(300px,56vh,500px);scroll-snap-align:center}
+.rp .media{height:100%;aspect-ratio:var(--a);background:#132a52}
+.rp figcaption{position:absolute;left:0;top:calc(100% + 12px);font-size:13.5px;color:rgba(255,255,255,.62);white-space:nowrap}
+.rising.pinned .rp.lo{transform:translateY(7vh)}.rising.pinned .rp.hi{transform:translateY(-7vh)}
+.rise-card{flex:none;width:min(360px,78vw);height:clamp(300px,56vh,500px);border-radius:var(--r);background:var(--red);color:#fff;padding:30px;display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:center;transition:background .5s}
+.rise-card:hover{background:var(--red-d)}
+.rise-card .d{display:block;font-size:clamp(2.4rem,3.6vw,3.4rem)}
+.rise-end{flex:none;width:clamp(10px,4vw,60px);height:1px}
+@media (max-width:899px){.rp,.rise-card{height:min(300px,72vw)}}
+
+/* ---------- videos ---------- */
+.vids{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.vid{display:grid;gap:18px}
+.vid .media{aspect-ratio:16/10;background:#132a52}
+.vid:nth-child(2){margin-top:clamp(0px,9vw,140px)}
+.vid:nth-child(2) .media{aspect-ratio:4/3.3}
+.vid .media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(6,18,42,.6))}
+.vid .media img{transition:transform 1.2s var(--ease)}
+.vid:hover .media img{transform:scale(1.04)}
+.play{position:absolute;z-index:2;left:22px;bottom:20px;display:flex;align-items:center;gap:14px;color:#fff;font-weight:600;font-size:15px}
+.play b{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.95);color:var(--ink);transition:transform .6s var(--ease),background .4s,color .4s}
+.play b svg{width:20px;height:20px;margin-left:3px}
+.vid:hover .play b{transform:scale(1.12);background:var(--red);color:#fff}
+.vid h3{font-family:var(--f-s);font-weight:400;font-size:clamp(1.6rem,2.4vw,2.2rem);line-height:1.1}
+.vid p{font-size:14.5px;color:rgba(255,255,255,.6)}
+@media (max-width:860px){.vid:nth-child(2){margin-top:0}.vids{grid-template-columns:1fr}.vid:nth-child(2) .media{aspect-ratio:16/10}}
+
+/* ---------- rows ---------- */
+.rows{border-top:1.5px solid var(--ink)}
+.row{position:relative;display:grid;grid-template-columns:clamp(48px,5vw,80px) minmax(0,1.2fr) minmax(0,1fr);gap:12px clamp(24px,5vw,80px);align-items:center;padding:clamp(24px,3.2vw,42px) 0;border-bottom:1px solid var(--rule-2)}
+.row .d{font-size:clamp(2.2rem,5.2vw,5rem);transition:transform .7s var(--ease)}
+.row p{font-size:clamp(1.02rem,1.25vw,1.18rem);color:var(--ink-2);max-width:40ch}
+.row::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease)}
+@media (hover:hover){.row:hover::after{transform:scaleX(1)}.row:hover .d{transform:translateX(14px)}}
+.idx{align-self:start;padding-top:.5em;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--red);letter-spacing:.04em}
+@media (max-width:760px){.row{grid-template-columns:36px 1fr;row-gap:8px}.row p{grid-column:2}.idx{padding-top:.35em}}
+
+/* ---------- quote ---------- */
+.quote{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(36px,7vw,120px);align-items:center}
+.quote .media{aspect-ratio:4/5;max-width:470px}
+.quote blockquote{display:grid;gap:28px}
+.qmark{font-family:var(--f-d);font-weight:900;font-size:clamp(7rem,12vw,11rem);line-height:.6;height:.42em;color:var(--red)}
+.quote blockquote p{font-family:var(--f-s);font-size:clamp(1.9rem,3.5vw,3.3rem);line-height:1.1;letter-spacing:-.01em}
+.who-q{display:grid;gap:4px;font-size:15px;color:var(--ink-2)}
+.who-q b{font-size:17px;color:var(--ink)}
+@media (max-width:820px){.quote{grid-template-columns:1fr}.quote .media{max-width:440px;width:100%;aspect-ratio:4/4.2}.quote .media img{object-position:50% 25%}}
+
+/* ---------- sponsors ---------- */
+.spons{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+.spons>*{background:var(--paper);display:grid;place-items:center;min-height:clamp(120px,13vw,170px);padding:26px}
+.spons .sp{position:relative;transition:background .5s}
+.spons img{height:clamp(40px,4.4vw,60px);width:72%;object-fit:contain;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.15);opacity:.7;transition:filter .5s,opacity .5s,transform .8s var(--ease)}
+.sn{position:absolute;left:18px;bottom:14px;font-size:12px;font-weight:600;color:var(--muted);opacity:0;transform:translateY(6px);transition:opacity .4s,transform .6s var(--ease)}
+@media (hover:hover){.spons .sp:hover{background:#fff}.spons .sp:hover img{filter:none;opacity:1;transform:translateY(-6px)}.spons .sp:hover .sn{opacity:1;transform:none}}
+.spons a{background:var(--ink);color:#fff;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:20px;transition:background .5s}
+.spons a:hover{background:var(--red)}
+.spons a .d{font-size:clamp(1.6rem,2.3vw,2.1rem)}
+@media (max-width:760px){.spons{grid-template-columns:repeat(2,1fr)}.spons>*{min-height:112px;padding:18px}.spons img{height:40px;width:80%}.sn{display:none}}
+
+/* ---------- give band ---------- */
+.give{overflow:clip;padding-block:clamp(110px,15vw,210px);text-align:center}
+.give h2{font-size:clamp(3.6rem,12.4vw,12.6rem);position:relative;z-index:2}
+.give p{position:relative;z-index:2;margin:28px auto 0;max-width:40ch;color:rgba(255,255,255,.74);font-size:clamp(1.05rem,1.3vw,1.2rem)}
+.give .actions{position:relative;z-index:2;justify-content:center;margin-top:40px}
+.give-ring{position:absolute;left:50%;top:50%;width:min(86vw,820px);aspect-ratio:1;margin:calc(min(86vw,820px) / -2) 0 0 calc(min(86vw,820px) / -2);pointer-events:none}
+.give-ring svg{width:100%;height:100%;overflow:visible}
+.give-line{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--red);opacity:.9;-webkit-mask:linear-gradient(#000 0 calc(var(--gp) - 40px),transparent calc(var(--gp) + 10px) calc(100% - var(--gp) - 10px),#000 calc(100% - var(--gp) + 40px));mask:linear-gradient(#000 0 calc(var(--gp) - 40px),transparent calc(var(--gp) + 10px) calc(100% - var(--gp) - 10px),#000 calc(100% - var(--gp) + 40px))}
+.give{--gp:clamp(110px,15vw,210px)}
+.give-dot{position:absolute;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--red)}
+.give-dot.t{top:calc(var(--gp) - 46px)}.give-dot.b{bottom:calc(var(--gp) - 46px)}
+@media (max-width:560px){.give .actions>*{flex:1 1 100%}.give .actions .btn{width:100%}}
+.give .btn-line{--bg:var(--navy)}
+
+/* ---------- page heads ---------- */
+.phead{padding:calc(var(--hdr) + clamp(24px,3vw,44px)) 0 clamp(56px,7vw,96px);overflow:clip}
+.phead-grid{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(20px,2.4vw,32px);row-gap:clamp(28px,3vw,44px);align-items:start;grid-template-rows:auto 1fr}
+.phead-grid>.h1{grid-column:1/span 6;grid-row:1;position:relative;z-index:1}
+.pnum{display:none;position:absolute;right:0;top:0;font-family:var(--f-d);font-weight:900;font-size:clamp(6.5rem,12vw,12rem);line-height:.76;color:transparent;-webkit-text-stroke:1.5px rgba(10,26,54,.15);pointer-events:none;user-select:none}
+.ph-text{grid-column:1/span 5;grid-row:2;align-self:start;display:grid;gap:26px;align-content:start;padding-top:24px;border-top:1.5px solid var(--ink)}
+.ph-text .lead{max-width:34ch}
+.ph-media{grid-column:7/-1;grid-row:1/span 2;align-self:start;width:min(100%,var(--w,100%));justify-self:end;aspect-ratio:var(--a,4/3)}
+.phead .h1{font-size:clamp(3.4rem,6.6vw,7rem)}
+.phead-copy{display:grid;gap:30px;align-content:end}
+.phead-side{display:grid;gap:24px;align-content:end}
+.phead-side .media{aspect-ratio:var(--a,4/3)}
+.crumb{display:flex;gap:10px;align-items:center;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:clamp(22px,2.6vw,34px)}
+.crumb a{padding:6px 0}
+.crumb a:hover{color:var(--ink)}
+.crumb i{width:18px;height:1.5px;background:var(--rule-2)}
+@media (max-width:860px){.phead-grid{grid-template-columns:1fr}.phead-grid>*,.phead-grid>.h1{grid-column:1/-1;grid-row:auto}.phead-grid{grid-template-rows:none}.phead .h1{font-size:clamp(3.1rem,14vw,6.4rem)}.ph-media{order:2;justify-self:stretch;width:100%}.ph-text{order:3}.pnum{display:block;font-size:clamp(5.5rem,24vw,9rem);top:0}}
+
+/* ---------- mobile arena page ---------- */
+.launch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--ink)}
+.launch>div{padding:30px 28px 8px 0;display:grid;gap:12px;align-content:start;position:relative}
+.launch>div+div{padding-left:28px;border-left:1px solid var(--rule)}
+.launch .k{font-family:var(--f-d);font-weight:800;text-transform:uppercase;font-size:clamp(1.8rem,2.8vw,2.6rem);line-height:.95}
+.launch p{color:var(--ink-2);font-size:16px}
+.launch .dot{position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--red)}
+.launch>div+div .dot{left:28px}
+@media (max-width:820px){.launch{grid-template-columns:1fr}.launch>div,.launch>div+div{padding:26px 0;border-left:0;border-bottom:1px solid var(--rule)}.launch>div+div .dot{left:0}}
+.pull{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.pull .media{aspect-ratio:585/212}
+.pull blockquote{display:grid;gap:24px}
+.pull blockquote p{font-family:var(--f-s);font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.12}
+.pull cite{font-style:normal;font-size:15px;color:rgba(255,255,255,.7)}
+.pull cite b{color:#fff;display:block;font-size:17px}
+@media (max-width:820px){.pull{grid-template-columns:1fr}}
+.steps{position:relative;display:grid;max-width:880px}
+.steps .rail{position:absolute;left:31px;top:40px;bottom:40px;width:2px;background:var(--rule)}
+.steps .rail i{position:absolute;inset:0;background:var(--red);transform-origin:50% 0}
+.step{position:relative;display:grid;grid-template-columns:64px 1fr;gap:28px;padding:26px 0;align-items:start}
+.step .n{position:relative;z-index:1;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--ink);font-family:var(--f-d);font-weight:800;font-size:26px}
+.step h3{margin:10px 0 8px}
+.step p{color:var(--ink-2);max-width:48ch}
+.cta-band{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;padding:clamp(32px,5vw,64px);border-radius:var(--r);background:var(--navy);color:#fff}
+.cta-band .d{font-size:clamp(2.6rem,5vw,4.6rem)}
+@media (max-width:760px){.cta-band{grid-template-columns:1fr}.cta-band .mag,.cta-band .btn{width:100%}.cta-band .btn{white-space:normal}}
+
+/* ---------- events ---------- */
+.next{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px 48px;align-items:center;padding:clamp(28px,4vw,48px);border-radius:var(--r);background:var(--paper);box-shadow:0 0 0 1px var(--rule),0 30px 60px -40px rgba(10,26,54,.35);margin-bottom:clamp(72px,9vw,128px)}
+.next h2{font-size:clamp(2.2rem,4vw,3.6rem)}
+.next p{color:var(--ink-2);margin-top:12px;max-width:52ch}
+.live{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--red);margin-bottom:14px}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--red);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,54,44,.5)}70%,100%{box-shadow:0 0 0 10px rgba(224,54,44,0)}}
+@media (max-width:820px){.next{grid-template-columns:1fr}.next .actions>*{flex:1 1 auto}}
+.tline{position:relative;--dc:clamp(170px,22vw,300px)}
+.tline .rail{position:absolute;left:var(--dc);top:8px;bottom:0;width:2px;background:var(--rule)}
+.tline .rail i{position:absolute;inset:0;background:var(--ink);transform-origin:50% 0}
+.ev{display:grid;grid-template-columns:var(--dc) minmax(0,1fr);padding-bottom:clamp(64px,8vw,112px)}
+.ev:last-child{padding-bottom:0}
+.ev-when{position:sticky;top:100px;align-self:start;padding-right:28px;display:grid;gap:6px}
+.ev-when time{font-family:var(--f-d);font-weight:800;text-transform:uppercase;font-size:clamp(1.9rem,2.8vw,2.7rem);line-height:.92}
+.ev-when span{font-size:14.5px;color:var(--muted)}
+.ev-body{position:relative;padding-left:clamp(28px,4vw,64px);display:grid;gap:18px}
+.ev-body::before{content:"";position:absolute;left:-5px;top:10px;width:12px;height:12px;border-radius:50%;background:var(--ice);box-shadow:inset 0 0 0 2.5px var(--ink)}
+.ev-body h3{font-family:var(--f-s);font-weight:400;font-size:clamp(2rem,3.4vw,3.1rem);line-height:1.04;letter-spacing:-.01em}
+.ev-body>p{color:var(--ink-2);max-width:56ch;font-size:clamp(1.02rem,1.2vw,1.12rem)}
+.ev-media{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin-top:8px}
+.ev-media .media{aspect-ratio:16/10}
+.ev-media.one{grid-template-columns:1fr}
+.ev-media.one .media{aspect-ratio:16/9}
+@media (max-width:760px){
+  .tline{--dc:0px}
+  .tline .rail{left:5px}
+  .ev{grid-template-columns:1fr;gap:14px}
+  .ev-when{position:relative;top:auto;padding:0 0 0 32px}
+  .ev-when::before{content:"";position:absolute;left:0;top:8px;width:12px;height:12px;border-radius:50%;background:var(--ice);box-shadow:inset 0 0 0 2.5px var(--ink)}
+  .ev-body{padding-left:32px}
+  .ev-body::before{display:none}
+  .ev-media{grid-template-columns:1fr}
+}
+
+/* ---------- about ---------- */
+.vision{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px)}
+.vision>div{display:grid;gap:18px;align-content:start;padding-top:28px;border-top:1.5px solid var(--ink)}
+.vision .serif{font-size:clamp(1.7rem,2.6vw,2.4rem);line-height:1.12}
+.vision p:not(.serif){color:var(--ink-2)}
+@media (max-width:820px){.vision{grid-template-columns:1fr}}
+.founder{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px);align-items:center}
+.founder+.founder{margin-top:clamp(72px,9vw,128px)}
+.founder.flip{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.founder.flip .swap{order:2;justify-self:end}
+.swap{position:relative;aspect-ratio:4/5;max-width:500px;width:100%;cursor:pointer;border-radius:var(--r)}
+.swap .media{position:absolute;inset:0}
+.swap .alt{opacity:0;transition:opacity .7s var(--ease-2)}
+.swap.on .alt{opacity:1}
+@media (hover:hover){.swap:hover .alt{opacity:1}}
+.swap-hint{position:absolute;z-index:3;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(250,251,252,.95);color:var(--ink);font-size:13px;font-weight:600;padding:9px 13px;border-radius:10px}
+.founder-copy{display:grid;gap:22px}
+.founder-copy .role{font-size:15px;font-weight:600;color:var(--red)}
+.founder-copy h3{font-size:clamp(2.6rem,4.8vw,4.6rem);line-height:.98}
+.founder-copy p{color:var(--ink-2);max-width:54ch}
+.founder-copy .actions{gap:26px}
+@media (max-width:820px){.founder,.founder.flip{grid-template-columns:1fr}.founder.flip .swap{order:0;justify-self:start}.swap{max-width:none;aspect-ratio:4/4.4}}
+.roster{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(28px,5vw,80px);border-top:1.5px solid #fff}
+.roster>div{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--rule-l);align-items:baseline}
+.roster b{font-weight:600;font-size:17px}
+.roster span{font-size:15px;color:rgba(255,255,255,.66)}
+@media (max-width:820px){.roster{grid-template-columns:1fr}.roster>div{grid-template-columns:1fr;gap:4px}}
+.motto{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(32px,6vw,96px);align-items:end}
+.motto .d{font-size:clamp(3.6rem,10vw,10rem)}
+.motto-copy{display:grid;gap:20px;color:var(--ink-2)}
+.motto-copy b{color:var(--ink);word-break:break-all}
+@media (max-width:820px){.motto{grid-template-columns:1fr}}
+
+/* ---------- get involved ---------- */
+.paths{border-top:1.5px solid var(--ink)}
+.path{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) 64px;gap:12px clamp(24px,4vw,64px);align-items:center;padding:clamp(26px,3.2vw,40px) clamp(0px,1.4vw,24px);border-bottom:1px solid var(--rule-2);transition:color .5s var(--ease)}
+.path::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);transform:scaleY(0);transform-origin:50% 100%;transition:transform .7s var(--ease)}
+.path .d{font-size:clamp(2rem,4.2vw,3.9rem)}
+.path p{color:var(--ink-2);transition:color .5s}
+.circ{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 1.5px var(--rule-2);transition:background .5s,box-shadow .5s,color .5s;justify-self:end}
+.circ .ar{width:20px;height:20px}
+@media (hover:hover){
+  .path:hover{color:#fff}
+  .path:hover::before{transform:scaleY(1)}
+  .path:hover p{color:rgba(255,255,255,.75)}
+  .path:hover .circ{background:var(--red);box-shadow:none}
+}
+@media (max-width:760px){.path{grid-template-columns:1fr 50px;padding-inline:0}.path p{grid-column:1;grid-row:2}.circ{grid-column:2;grid-row:1/3;width:50px;height:50px}}
+.merch{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(16px,2.4vw,32px);align-items:end}
+@media (max-width:820px){.merch{align-items:start}}
+.prod{display:grid;gap:16px}
+.prod .well{aspect-ratio:1/1;border-radius:var(--r);background:#fff;overflow:hidden;display:grid;place-items:center;padding:8%}
+.prod:first-child .well{aspect-ratio:1/1.12}
+.prod .well img{width:100%;height:100%;object-fit:contain;transition:transform 1s var(--ease)}
+.prod:hover .well img{transform:scale(1.06) rotate(-1.5deg)}
+.prod .meta{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.prod b{font-weight:600;font-size:17px}
+.prod .meta>span{font-size:14px;color:var(--muted);display:inline-flex;gap:8px;align-items:center;flex:none}
+@media (max-width:820px){.merch{grid-template-columns:1fr 1fr}.prod:first-child{grid-column:1/-1}.prod:first-child .well{aspect-ratio:16/12}}
+@media (max-width:480px){.prod .meta{flex-direction:column;gap:2px}}
+
+/* ---------- donate ---------- */
+.don{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,6vw,96px);align-items:end}
+.gcard{position:relative;background:var(--paper);border-radius:calc(var(--r) + 4px);padding:clamp(24px,3vw,40px);box-shadow:0 0 0 1px var(--rule),0 50px 90px -50px rgba(10,26,54,.5);display:grid;gap:20px}
+.gcard-top{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.crest{display:block;width:76px;height:76px}
+.crest svg{width:100%;height:100%}
+.gcard{border-top:5px solid var(--red)}
+.gcard h2{font-family:var(--f-d);font-weight:800;text-transform:uppercase;font-size:clamp(1.9rem,2.6vw,2.4rem);line-height:.95}
+.gcard .muted{font-size:14.5px;margin-top:4px}
+.gcard .mag,.gcard .btn{width:100%}
+.or{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--muted)}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--rule)}
+.tax{display:flex;gap:12px;align-items:flex-start;padding:16px;border-radius:12px;background:var(--ice);font-size:14px;color:var(--ink-2)}
+.tax svg{flex:none;width:20px;height:20px;color:var(--blue);margin-top:1px}
+@media (max-width:900px){.don{grid-template-columns:1fr}}
+.funds{display:flex;gap:16px;height:clamp(340px,32vw,420px)}
+.fund{position:relative;flex:1 1 0;min-width:0;border-radius:var(--r);overflow:hidden;color:#fff;transition:flex-grow .9s var(--ease)}
+.fund.on{flex-grow:2.2}
+.fund img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.fund.on img{transform:scale(1.03)}
+.fund::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,42,.05) 30%,rgba(6,18,42,.86))}
+.fund-c{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:clamp(22px,2.6vw,34px);display:grid;gap:12px}
+.fund-c .d{font-size:clamp(2rem,3.2vw,3rem)}
+.fund-c p{max-width:36ch;color:rgba(255,255,255,.86);opacity:0;transform:translateY(10px);transition:opacity .5s .1s,transform .7s var(--ease) .1s}
+.fund.on .fund-c p{opacity:1;transform:none}
+.fund button{position:absolute;inset:0;z-index:3;border-radius:inherit}
+@media (max-width:820px){.funds{flex-direction:column;height:auto}.fund,.fund.on{height:280px;flex:none}.fund-c p{opacity:1;transform:none}.fund button{display:none}}
+.more2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,32px)}
+.more2 a{display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:center;padding:clamp(24px,3vw,36px);border-radius:var(--r);background:var(--paper);box-shadow:0 0 0 1px var(--rule);transition:box-shadow .5s,transform .7s var(--ease)}
+.more2 a:hover{box-shadow:0 0 0 1.5px var(--ink),0 30px 60px -40px rgba(10,26,54,.4);transform:translateY(-4px)}
+.more2 .d{font-size:clamp(1.8rem,2.6vw,2.4rem)}
+.more2 p{grid-column:1;color:var(--ink-2);font-size:15.5px}
+.more2 .circ{grid-row:1/3;grid-column:2}
+.more2 a:hover .circ{background:var(--red);box-shadow:none;color:#fff}
+@media (max-width:760px){.more2{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:start}
+.lines{border-top:1.5px solid var(--ink)}
+.cline{display:grid;gap:6px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.cline small{font-size:13.5px;font-weight:600;color:var(--muted)}
+.cline .r{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px}
+@media (max-width:560px){.copybtn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.copybtn{width:44px;padding:0;justify-content:center}.cline strong{font-size:15px}}
+.cline strong{font-weight:600;font-size:clamp(1rem,1.5vw,1.25rem);overflow-wrap:anywhere}
+.copybtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:10px;box-shadow:inset 0 0 0 1.5px var(--rule-2);font-size:13.5px;font-weight:600;transition:background .3s,color .3s,box-shadow .3s}
+.copybtn:hover{background:var(--ink);color:#fff;box-shadow:none}
+.copybtn svg{width:16px;height:16px}
+.copybtn .ok{display:none}
+.copybtn.done{background:var(--blue);color:#fff;box-shadow:none}
+.copybtn.done .ok{display:block}.copybtn.done .cp{display:none}
+.form{background:var(--paper);border-radius:calc(var(--r) + 4px);padding:clamp(22px,3.4vw,44px);box-shadow:0 0 0 1px var(--rule),0 50px 90px -60px rgba(10,26,54,.5);display:grid;gap:16px}
+.form h2{font-family:var(--f-d);font-weight:800;text-transform:uppercase;font-size:clamp(2rem,2.8vw,2.6rem);line-height:.95;margin-bottom:6px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.f2{grid-template-columns:1fr}}
+.fld{position:relative;display:grid}
+.fld input,.fld textarea,.fld select{width:100%;border:0;border-radius:12px;background:var(--ice);box-shadow:inset 0 0 0 1.5px transparent;padding:26px 16px 10px;font-size:16px;line-height:1.4;transition:box-shadow .3s,background .3s;appearance:none;-webkit-appearance:none}
+.fld textarea{resize:vertical;min-height:150px}
+.fld select{padding-right:44px;cursor:pointer}
+.fld .chev{position:absolute;right:16px;top:30px;width:16px;height:16px;pointer-events:none;color:var(--muted)}
+.fld label{position:absolute;left:16px;top:18px;font-size:16px;line-height:1.4;color:var(--muted);pointer-events:none;transform-origin:0 0;transition:transform .35s var(--ease),color .3s}
+.fld input:focus,.fld textarea:focus,.fld select:focus{outline:none;background:#fff;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.fld input:focus+label,.fld input:not(:placeholder-shown)+label,.fld textarea:focus+label,.fld textarea:not(:placeholder-shown)+label,.fld.sel label{transform:translateY(-10px) scale(.78);color:var(--ink-2)}
+.fld.err input,.fld.err textarea{box-shadow:inset 0 0 0 1.5px var(--red);background:#fff}
+.fld .msg{font-size:13px;color:var(--red-d);font-weight:600;margin-top:6px;display:none}
+.fld.err .msg{display:block}
+.fld.ok-f input,.fld.ok-f textarea{box-shadow:inset 0 0 0 1.5px rgba(45,100,182,.45)}
+.form .send{justify-self:start}
+.spin{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;animation:spin .8s linear infinite;display:none}
+.busy .spin{display:block}.busy .ar{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sent{display:none;gap:18px;justify-items:start}
+.form.done>*:not(.sent){display:none}
+.form.done .sent{display:grid}
+.sent h2:focus{outline:none}
+.tick{width:64px;height:64px;border-radius:50%;background:var(--blue);display:grid;place-items:center;color:#fff}
+.tick svg{width:30px;height:30px}
+.tick path{stroke-dasharray:30;stroke-dashoffset:30;animation:draw .7s .15s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.note{font-size:13.5px;color:var(--muted);padding:12px 14px;border-radius:10px;background:var(--ice)}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+@media (max-width:560px){.form .send{width:100%}}
+
+/* ---------- footer ---------- */
+.foot{background:var(--navy-2);color:#fff;padding-top:clamp(72px,9vw,120px);overflow:clip}
+.f-top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:40px}
+.f-top img{height:64px;width:auto}
+.f-top p{color:rgba(255,255,255,.62);font-size:15px;max-width:30ch}
+.f-col{display:grid;gap:12px;align-content:start;font-size:15px}
+.f-col h4{font-size:13.5px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px}
+.f-col a{width:fit-content;color:rgba(255,255,255,.88);background:linear-gradient(#fff,#fff) 0 100%/0 1px no-repeat;transition:background-size .5s var(--ease),color .3s}
+.f-col a:hover{color:#fff;background-size:100% 1px}
+.f-col span{color:rgba(255,255,255,.88);overflow-wrap:anywhere}
+.f-word{font-family:var(--f-d);font-weight:900;text-transform:uppercase;font-size:clamp(3rem,13.6vw,15rem);line-height:.8;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.22);margin-top:clamp(64px,8vw,110px);text-align:center}
+.f-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;border-top:1px solid var(--rule-l);padding-block:22px 28px;margin-top:clamp(18px,2vw,28px);font-size:13px;color:rgba(255,255,255,.5)}
+@media (max-width:860px){.f-top{grid-template-columns:1fr 1fr}.f-top>div:first-child{grid-column:1/-1}}
+@media (max-width:480px){.f-top{grid-template-columns:1fr 1fr;gap:36px 20px}.f-top>div:last-child{grid-column:1/-1}}
+
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--red);color:#fff;overflow:hidden;padding-block:clamp(14px,1.6vw,22px);position:relative;z-index:2}
+.tk-track{display:flex;width:max-content;animation:tk 46s linear infinite;will-change:transform}
+.tk-set{display:flex;align-items:center;flex:none}
+.tk-set span{font-family:var(--f-d);font-weight:800;text-transform:uppercase;font-size:clamp(1.7rem,3.2vw,3rem);line-height:1;white-space:nowrap;letter-spacing:.005em}
+.tk-set i{flex:none;width:.62em;height:.62em;font-size:clamp(1.7rem,3.2vw,3rem);margin:0 .55em;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(255,255,255,.9);position:relative}
+.tk-set i::after{content:"";position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px;border-radius:50%;background:#fff}
+@keyframes tk{to{transform:translateX(-50%)}}
+.ticker .tk-skew{display:block}
+@media (prefers-reduced-motion:reduce){.tk-track{animation:none}}
+
+.stmt-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.75fr);gap:56px clamp(40px,6vw,110px);align-items:end}
+.stats{display:grid;border-top:1.5px solid rgba(255,255,255,.9)}
+.stats>div{display:grid;gap:8px;padding:22px 0 24px;border-bottom:1px solid var(--rule-l)}
+.stats dt{font-size:clamp(3.4rem,6.2vw,6.4rem);line-height:.85;font-variant-numeric:tabular-nums;color:#fff}
+.stats>div:first-child dt{color:var(--red)}
+.stats dd{font-size:14.5px;color:rgba(255,255,255,.68);max-width:30ch}
+@media (max-width:900px){.stmt-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:20px}.stats>div{border-bottom:0}}
+@media (max-width:560px){.stats{grid-template-columns:1fr}.stats>div{border-bottom:1px solid var(--rule-l);grid-template-columns:auto 1fr;align-items:center;gap:18px}.stats dt{font-size:3.2rem;min-width:3.2ch}}
+
+/* ---------- cursor ---------- */
+.cursor{position:fixed;left:0;top:0;z-index:96;pointer-events:none;width:0;height:0}
+.cursor span{position:absolute;left:-48px;top:-48px;width:96px;height:96px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;transform:scale(0);transition:transform .5s var(--ease)}
+.cursor b{font-size:13.5px;font-weight:600;letter-spacing:.01em}
+.cursor.on span{transform:scale(1)}
+.cursor.ink span{background:#fff;color:var(--ink)}
+@media (hover:none),(pointer:coarse){.cursor{display:none}}
+.has-cursor [data-cursor],.has-cursor [data-cursor] *{cursor:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ar" viewBox="0 0 20 20"><path d="M3.5 10h12.5M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ne" viewBox="0 0 20 20"><path d="M5.5 14.5l9-9M7 5.5h7.5V13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 20 20"><path d="M5 3.2v13.6c0 .6.7 1 1.2.6l10.2-6.8a.7.7 0 0 0 0-1.2L6.2 2.6c-.5-.4-1.2 0-1.2.6z" fill="currentColor"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 20 20"><rect x="6.5" y="6.5" width="10" height="10" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M13.5 4.5v-.3A1.7 1.7 0 0 0 11.8 2.5H4.2a1.7 1.7 0 0 0-1.7 1.7v7.6c0 .9.8 1.7 1.7 1.7h.3" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 20 20"><path d="M10 2 3.5 4.5v5c0 4 2.8 7.2 6.5 8.5 3.7-1.3 6.5-4.5 6.5-8.5v-5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m7 10 2.2 2.2L13.3 8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 20 20"><path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span><b id="cursorLbl">View</b></span></div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap bar">
+    <a class="brand" href="#home" aria-label="The Wilmington Arena Project, home">
+      <img class="dk" src="img/logo-navy.png" alt="" width="670" height="335">
+      <img class="lw" src="img/logo-white.png" alt="" width="670" height="335">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="nl" href="#mobile-arena">Mobile Arena</a>
+      <a class="nl" href="#events">Events</a>
+      <a class="nl" href="#about">About</a>
+      <a class="nl" href="#get-involved">Get Involved</a>
+      <a class="nl" href="#contact">Contact</a>
+      <span class="mag"><a class="btn btn-red btn-sm" href="#donate">Donate <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></span>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mm"><span id="menuLbl">Menu</span><span class="burger" aria-hidden="true"><i></i><i></i></span></button>
+  </div>
+  <div class="prog" aria-hidden="true"><i></i></div>
+</header>
+
+<div class="mm" id="mm">
+  <nav aria-label="Mobile">
+    <a href="#home" style="--i:0">Home</a>
+    <a href="#mobile-arena" style="--i:1">Mobile Arena <small>Book it</small></a>
+    <a href="#events" style="--i:2">Events</a>
+    <a href="#about" style="--i:3">About</a>
+    <a href="#get-involved" style="--i:4">Get Involved</a>
+    <a href="#contact" style="--i:5">Contact</a>
+  </nav>
+  <div class="mm-foot">
+    <a class="btn btn-red btn-lg" href="#donate">Donate to the project <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
+    <p>michael@wilmingtonarenaproject.com<br>(910) 319-1052</p>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+
+<!-- ======================= HOME ======================= -->
+<div class="view" id="v-home" data-view="home">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="hero-grid">
+        <h1 class="d hero-h" id="hero-h">
+          <span class="ln"><span>Building</span></span>
+          <span class="ln"><span>Wilmington</span></span>
+          <span class="ln"><span>a home</span></span>
+          <span class="ln"><span>for hockey.</span></span>
+        </h1>
+        <div class="hero-copy">
+          <p class="lead" data-hero>A community-owned nonprofit working toward Wilmington, North Carolina’s first multi-purpose arena, and bringing people together through sport right now.</p>
+          <div class="actions" data-hero>
+            <span class="mag"><a class="btn btn-red btn-lg" href="#donate">Donate <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></span>
+            <a class="btn btn-line btn-lg" href="#mobile-arena">Book the mobile arena</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="rink" aria-hidden="true">
+            <i class="cl"></i>
+            <svg viewBox="0 0 100 100"><circle class="c1" cx="50" cy="50" r="46" fill="none" stroke="#2D64B6" stroke-width=".32" pathLength="1"/><circle cx="50" cy="50" r="1.1" fill="#2D64B6"/></svg>
+          </div>
+          <div class="media hero-ph" data-speed=".92"><img src="img/coastal-clash.jpg" alt="Team Wilmington Arena Project in light blue jerseys celebrating with the Coastal Clash trophy on the ice" width="1126" height="840" fetchpriority="high"><span class="ph-cap" data-hero><b>Coastal Clash champions</b>Polar Ice House, Wilmington</span></div>
+          <figure class="hero-inset" data-speed="1.12"><div class="media"><img src="img/crowd-lawn.jpg" alt="Fans in lawn chairs at the Arena Rising watch party" width="465" height="300"></div><figcaption><span>Arena Rising</span><span>Apr 25, 2026</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="hero-foot" data-hero>
+        <div class="meta"><span>Founded 2024</span><span>Community-owned nonprofit</span><span>Cape Fear region, NC</span></div>
+        <span class="cue" aria-hidden="true">Scroll <i></i></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div class="tk-track"><div class="tk-set"><span>Mobile Ball Hockey Arena</span><i></i><span>Arena Rising</span><i></i><span>Coastal Clash champions</span><i></i><span>Youth programs</span><i></i><span>Founded 2024</span><i></i><span>Cape Fear region</span><i></i></div><div class="tk-set"><span>Mobile Ball Hockey Arena</span><i></i><span>Arena Rising</span><i></i><span>Coastal Clash champions</span><i></i><span>Youth programs</span><i></i><span>Founded 2024</span><i></i><span>Cape Fear region</span><i></i></div></div></div>
+
+  <section class="dark stmt" aria-label="Our mission">
+    <div class="stmt-mark" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="49" fill="none" stroke="rgba(255,255,255,.18)" stroke-width=".3"/><circle cx="50" cy="50" r="1" fill="#E0362C"/><line x1="50" y1="-80" x2="50" y2="180" stroke="#E0362C" stroke-width=".35"/></svg>
+    </div>
+    <div class="wrap">
+      <div class="stmt-grid">
+      <div>
+      <span class="label">The project</span>
+      <p class="stmt-t" data-words>Wilmington deserves a home for the game. We’re working toward a 10,000-seat arena for hockey, basketball, concerts and community, and we’re not waiting for it to open to bring people together.</p>
+      <div class="stmt-row">
+        <a class="tl" href="#about">Our mission <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
+        <a class="tl" href="#events">What we’ve done so far <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
+      </div>
+      </div>
+      <dl class="stats" data-r>
+        <div><dt class="d"><span data-count="10000">10,000</span></dt><dd>Seats planned for Wilmington’s multi-purpose arena</dd></div>
+        <div><dt class="d"><span data-count="100">100</span></dt><dd>Nearly that many students played in the mobile arena’s first sessions</dd></div>
+        <div><dt class="d">2024</dt><dd>The year the community-owned nonprofit was founded</dd></div>
+      </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="ways-h">
+    <div class="wrap">
+      <div class="tabs-row">
+        <h2 class="d h2" id="ways-h" data-lines><span class="ln"><span>Two ways</span></span><span class="ln"><span>we’re building.</span></span></h2>
+        <div class="tablist" role="tablist" aria-label="Two ways we’re building" data-r>
+          <i class="ind" aria-hidden="true"></i>
+          <button role="tab" id="t-now" aria-controls="p-now" aria-selected="true">Right now</button>
+          <button role="tab" id="t-goal" aria-controls="p-goal" aria-selected="false" tabindex="-1">The goal</button>
+        </div>
+      </div>
+      <div class="panels" data-r>
+        <div class="panel" role="tabpanel" id="p-now" aria-labelledby="t-now">
+          <a class="media zoom" data-cursor="Open" href="#mobile-arena" aria-label="See the mobile arena" style="aspect-ratio:585/250"><img src="img/kids-group.jpg" alt="Students in purple shirts holding ball hockey sticks in the air" width="585" height="212" loading="lazy"></a>
+          <div class="panel-copy">
+            <span class="kicker">Right now</span>
+            <p class="serif">Programs that put sticks in kids’ hands.</p>
+            <p>Grassroots programming, youth initiatives, mobile activations, community events and public watch parties across the Cape Fear region.</p>
+            <div><a class="tl" href="#mobile-arena">See the mobile arena <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-goal" aria-labelledby="t-goal" hidden>
+          <a class="media zoom" data-cursor="Open" href="#about" aria-label="Read our mission" style="aspect-ratio:585/250"><img src="img/aerial.jpg" alt="Aerial view of a crowd at Riverfront Park for the Arena Rising watch party" width="905" height="487" loading="lazy"></a>
+          <div class="panel-copy">
+            <span class="kicker">The goal</span>
+            <p class="serif">A 10,000-seat multi-purpose arena.</p>
+            <p>A home for professional ice hockey and basketball, concerts and events, built to bring Wilmington together and boost the local economy.</p>
+            <div><a class="tl" href="#about">Read our mission <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec paper" aria-labelledby="mob-h">
+    <div class="wrap mob">
+      <div class="mob-copy">
+        <span class="label" data-r>Mobile Ball Hockey Arena</span>
+        <h2 class="d h2" id="mob-h" data-lines><span class="ln"><span>We bring</span></span><span class="ln"><span>the rink</span></span><span class="ln"><span>to you.</span></span></h2>
+        <p class="lead" data-r>Sticks up, game on. No ice and no experience needed.</p>
+        <div class="actions" data-r>
+          <span class="mag"><a class="btn btn-ink" href="https://docs.google.com/forms/d/e/1FAIpQLSeOU4HEkbp9ietV7QNJFbzRzogWP68186H63nCCstZDeb57dg/viewform" target="_blank" rel="noopener">Request a booking <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a></span>
+          <a class="tl" href="#mobile-arena">How it works <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
+        </div>
+      </div>
+      <div class="mob-media">
+        <div class="media m1" data-unveil><img src="img/kids-group-2.jpg" alt="A group of students cheering with hockey sticks next to the mobile arena trailer" width="532" height="258" loading="lazy"></div>
+        <ul class="who" data-r>
+          <li>Public &amp; private schools <span>PE classes and field days</span></li>
+          <li>Churches <span>Youth groups and family nights</span></li>
+          <li>After school programs <span>A new sport to try together</span></li>
+          <li>Individual events <span>Festivals and fundraisers</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark rising" aria-labelledby="rise-h">
+    <div class="rise-pin">
+      <div class="rise-track" data-cursor="Scroll" data-cursor-ink>
+        <div class="rise-intro">
+          <span class="label">April 25, 2026 · Riverfront Park</span>
+          <h2 class="d h2" id="rise-h"><span class="ln"><span>Arena Rising</span></span><span class="ln"><span>brought the</span></span><span class="ln"><span>city out.</span></span></h2>
+          <p class="lead">Our free Carolina Hurricanes playoff watch party, with a big screen, live music, games and raffles.</p>
+        </div>
+        <figure class="rp" style="--a:905/487"><div class="media"><img src="img/aerial.jpg" alt="Aerial view of the watch party lawn, stage and screen at Riverfront Park" width="905" height="487" loading="lazy"></div><figcaption>Riverfront Park from above</figcaption></figure>
+        <figure class="rp hi" style="--a:312/487"><div class="media"><img src="img/flag-fan.jpg" alt="A fan in a Hurricanes jersey waving a red flag" width="312" height="487" loading="lazy"></div><figcaption>Flags up for the Canes</figcaption></figure>
+        <figure class="rp lo" style="--a:643/300"><div class="media"><img src="img/watch-cheer.jpg" alt="Fans cheering in front of the big screen" width="643" height="300" loading="lazy"></div><figcaption>The big screen moment</figcaption></figure>
+        <figure class="rp" style="--a:300/518"><div class="media"><img src="img/canes-fan.jpg" alt="A fan in a Hurricanes jersey relaxing in a lawn chair" width="300" height="518" loading="lazy"></div><figcaption>Lawn chair seats</figcaption></figure>
+        <figure class="rp hi" style="--a:465/300"><div class="media"><img src="img/crowd-lawn.jpg" alt="A crowd in lawn chairs watching the game" width="465" height="300" loading="lazy"></div><figcaption>A full lawn</figcaption></figure>
+        <a class="rise-card" href="https://www.youtube.com/watch?v=xrGqmHc-7q0" target="_blank" rel="noopener">
+          <span class="ar ne" style="width:26px;height:26px"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span>
+          <span><span class="d">Watch behind the scenes</span><span style="display:block;margin-top:14px;font-weight:600">On YouTube</span></span>
+        </a>
+        <div class="rise-end" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark sec" style="padding-top:clamp(24px,4vw,48px)" aria-labelledby="vid-h">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2 class="d h2" id="vid-h" data-lines><span class="ln"><span>Watch the story.</span></span></h2>
+      </div>
+      <div class="vids">
+        <a class="vid" data-cursor="Play" href="https://www.youtube.com/watch?v=xrGqmHc-7q0" target="_blank" rel="noopener" data-r>
+          <div class="media"><img src="img/watch-cheer.jpg" alt="" width="643" height="300" loading="lazy"><span class="play"><b><svg><use href="#i-play"/></svg></b>Play on YouTube</span></div>
+          <h3>Behind the scenes: Arena Rising</h3>
+          <p>On the Arena Project YouTube channel</p>
+        </a>
+        <a class="vid" data-cursor="Play" href="https://www.youtube.com/watch?v=y5YXTAuASm4" target="_blank" rel="noopener" data-r>
+          <div class="media"><img src="img/mike-pro.jpg" alt="" width="732" height="516" loading="lazy" style="object-position:42% 40%"><span class="play"><b><svg><use href="#i-play"/></svg></b>Play on YouTube</span></div>
+          <h3>Bringing Hockey to the Beach</h3>
+          <p>Highlight video</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2 class="d h2" id="why-h" data-lines><span class="ln"><span>Why an arena</span></span><span class="ln"><span>matters here.</span></span></h2>
+        <p class="lead" data-r>More than a building. Here’s what it’s meant to do for Wilmington.</p>
+      </div>
+      <div class="rows">
+        <div class="row" data-r><span class="idx">01</span><h3 class="d">Bring us together</h3><p>Wilmington is a diverse community, and this project aims to bring us together.</p></div>
+        <div class="row" data-r><span class="idx">02</span><h3 class="d">Youth to pro</h3><p>Enable a new pathway of ice hockey development from youth to professional.</p></div>
+        <div class="row" data-r><span class="idx">03</span><h3 class="d">Local economy</h3><p>Boost the local economy and bridge the gap between local businesses and the community.</p></div>
+        <div class="row" data-r><span class="idx">04</span><h3 class="d">Character</h3><p>Build character, promote teamwork and develop long-lasting relationships for our youth.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sandbg" aria-label="From our founder">
+    <div class="wrap quote">
+      <div class="media" data-unveil><img src="img/mike.jpg" alt="Michael Völlmin, President and Founder" width="732" height="915" loading="lazy"></div>
+      <blockquote>
+        <span class="qmark" aria-hidden="true">“</span>
+        <p data-r>This project will be much more than just hockey, as sport tends to be. It’s going to galvanize the community and change a lot of lives for the better.</p>
+        <footer class="who-q" data-r><b>Michael “Mike” Völlmin</b>President &amp; Founder, Chairman of the Board</footer>
+        <div data-r><a class="tl" href="#about">Meet the team <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="sp-h">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2 class="d h2" id="sp-h" data-lines><span class="ln"><span>Backed by</span></span><span class="ln"><span>local partners.</span></span></h2>
+        <p class="lead" data-r>Thank you to the sponsors and supporters who make the work possible.</p>
+      </div>
+      <div class="spons" data-r>
+        <div class="sp"><img src="img/s-novant.png" alt="Novant Health" loading="lazy"><span class="sn" aria-hidden="true">Novant Health</span></div>
+        <div class="sp"><img src="img/s-emergeortho.png" alt="EmergeOrtho Charitable Fund" loading="lazy"><span class="sn" aria-hidden="true">EmergeOrtho</span></div>
+        <div class="sp"><img src="img/s-marine-fcu.png" alt="Marine Federal Credit Union" loading="lazy"><span class="sn" aria-hidden="true">Marine Federal Credit Union</span></div>
+        <div class="sp"><img src="img/s-carolina-storage.png" alt="Carolina Storage" loading="lazy"><span class="sn" aria-hidden="true">Carolina Storage</span></div>
+        <div class="sp"><img src="img/s-brookelynn.png" alt="Brookelynn Premium Cigars" loading="lazy"><span class="sn" aria-hidden="true">Brookelynn Premium Cigars</span></div>
+        <div class="sp"><img src="img/s-45drives.png" alt="45Drives" loading="lazy"><span class="sn" aria-hidden="true">45Drives</span></div>
+        <div class="sp"><img src="img/s-protocase.png" alt="Protocase" loading="lazy"><span class="sn" aria-hidden="true">Protocase</span></div>
+        <a href="#contact"><span class="d">Become a sponsor</span><span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark give" aria-labelledby="give-h">
+    <i class="give-line" aria-hidden="true"></i><i class="give-dot t" aria-hidden="true"></i><i class="give-dot b" aria-hidden="true"></i>
+    <div class="give-ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="49" fill="none" stroke="#2D64B6" stroke-width=".3" pathLength="1"/><circle cx="50" cy="50" r="1.1" fill="#2D64B6"/></svg></div>
+    <div class="wrap">
+      <h2 class="d" id="give-h" data-lines><span class="ln"><span>Help raise</span></span><span class="ln"><span>the arena.</span></span></h2>
+      <p data-r>Every gift moves Wilmington closer. All donations are tax deductible.</p>
+      <div class="actions" data-r>
+        <span class="mag"><a class="btn btn-red btn-lg" href="#donate">Donate <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></span>
+        <a class="btn btn-line btn-lg" href="#get-involved">Other ways to help</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= MOBILE ARENA ======================= -->
+<div class="view" id="v-mobile-arena" data-view="mobile-arena">
+  <section class="phead">
+    <div class="wrap">
+      <div class="crumb" data-head><a href="#home">Home</a><i></i><span>Mobile Arena</span></div>
+      <div class="phead-grid">
+        <h1 class="d h1" data-head-lines><span class="ln"><span>The rink</span></span><span class="ln"><span>comes</span></span><span class="ln"><span>to you.</span></span></h1>
+        <span class="pnum" aria-hidden="true">01</span>
+        <div class="ph-text"><p class="lead">Our Mobile Ball Hockey Arena brings the sport to schools and community groups across the Cape Fear region. No ice and no experience needed.</p><div class="actions"><span class="mag"><a class="btn btn-red" href="https://docs.google.com/forms/d/e/1FAIpQLSeOU4HEkbp9ietV7QNJFbzRzogWP68186H63nCCstZDeb57dg/viewform" target="_blank" rel="noopener">Request a booking <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a></span></div></div>
+        <div class="media ph-media" style="--w:691px;--a:532/258" data-unveil><img src="img/kids-group-2.jpg" alt="Students cheering with sticks raised at a mobile arena session" width="532" height="258"></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-bottom:var(--sec)">
+    <div class="wrap">
+      <div class="launch" data-r>
+        <div><i class="dot"></i><span class="k">Launched Sept 17, 2026</span><p>The program kicked off to bring ball hockey to young people around the region.</p></div>
+        <div><i class="dot"></i><span class="k">Nearly 100 students</span><p>First sessions at the Children’s Museum of Wilmington and GLOW Academy, many playing for the first time.</p></div>
+        <div><i class="dot"></i><span class="k">Backed locally</span><p>Supported by Novant Health, EmergeOrtho and the YMCA of Southeastern North Carolina.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="dark sec">
+    <div class="wrap pull">
+      <div class="media" data-unveil><img src="img/kids-group.jpg" alt="Students in purple shirts with sticks raised" width="585" height="212" loading="lazy"></div>
+      <blockquote>
+        <p data-r>This program is about meeting kids where they are and showing them a sport and a community that believes in them.</p>
+        <cite data-r><b>Michael Völlmin</b>Founder</cite>
+      </blockquote>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2 class="d h2" data-lines><span class="ln"><span>Who we</span></span><span class="ln"><span>bring it to.</span></span></h2>
+      </div>
+      <div class="rows">
+        <div class="row" data-r><span class="idx">01</span><h3 class="d">Public &amp; private schools</h3><p>PE classes, field days and school events.</p></div>
+        <div class="row" data-r><span class="idx">02</span><h3 class="d">Churches</h3><p>Youth groups and family nights.</p></div>
+        <div class="row" data-r><span class="idx">03</span><h3 class="d">After school programs</h3><p>A new sport for kids to try together.</p></div>
+        <div class="row" data-r><span class="idx">04</span><h3 class="d">Individual events</h3><p>Festivals, fundraisers and community days.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec paper">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2 class="d h2" data-lines><span class="ln"><span>How booking</span></span><span class="ln"><span>works.</span></span></h2>
+        <p class="lead" data-r>Three steps from the first message to sticks on the floor.</p>
+      </div>
+      <div class="steps" data-steps>
+        <span class="rail" aria-hidden="true"><i></i></span>
+        <div class="step" data-r><span class="n">1</span><div><h3 class="h3">Tell us about your group</h3><p>Fill out the short booking form with your date, place and group size.</p></div></div>
+        <div class="step" data-r><span class="n">2</span><div><h3 class="h3">We plan it with you</h3><p>Our events team follows up to lock in the details.</p></div></div>
+        <div class="step" data-r><span class="n">3</span><div><h3 class="h3">Game on</h3><p>We set up the arena on site and get everyone playing.</p></div></div>
+      </div>
+      <div class="cta-band" style="margin-top:clamp(56px,7vw,96px)" data-r>
+        <h3 class="d">Ready to<br>book a date?</h3>
+        <span class="mag"><a class="btn btn-red btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSeOU4HEkbp9ietV7QNJFbzRzogWP68186H63nCCstZDeb57dg/viewform" target="_blank" rel="noopener">Open the booking form <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a></span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= EVENTS ======================= -->
+<div class="view" id="v-events" data-view="events">
+  <section class="phead">
+    <div class="wrap">
+      <div class="crumb" data-head><a href="#home">Home</a><i></i><span>Events</span></div>
+      <div class="phead-grid">
+        <h1 class="d h1" data-head-lines><span class="ln"><span>Where we</span></span><span class="ln"><span>show up.</span></span></h1>
+        <span class="pnum" aria-hidden="true">02</span>
+        <div class="ph-text"><p class="lead">Watch parties, tournaments, fundraisers and pop-up rinks. Here’s what we’ve been up to.</p></div>
+        <div class="media ph-media" style="--w:835px;--a:643/300" data-unveil><img src="img/watch-cheer.jpg" alt="Fans cheering at the Arena Rising watch party" width="643" height="300"></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-bottom:var(--sec)">
+    <div class="wrap">
+      <div class="next" data-r>
+        <div>
+          <span class="live"><i></i>Next up</span>
+          <h2 class="d">The next date is being set.</h2>
+          <p>Want the project at your school, church or event in the meantime? Book the mobile arena, or become a member to support what’s next.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-ink" href="#mobile-arena">Book the mobile arena</a>
+          <a class="btn btn-line" href="https://docs.google.com/forms/d/e/1FAIpQLSfxj6iFb2GHDp1Hev1B_gReHXTdlDhPgm59uBS2YBMdt-Ba9A/viewform" target="_blank" rel="noopener">Become a member</a>
+        </div>
+      </div>
+      <div class="tline" data-tline>
+        <span class="rail" aria-hidden="true"><i></i></span>
+        <article class="ev">
+          <div class="ev-when"><time datetime="2026-09-17">Sept 17, 2026</time><span>Across the region</span></div>
+          <div class="ev-body" data-r>
+            <h3>Mobile Ball Hockey Arena launch</h3>
+            <p>The mobile arena rolled out with first sessions at the Children’s Museum of Wilmington and GLOW Academy, introducing nearly 100 students to the sport.</p>
+            <div class="ev-media"><div class="media"><img src="img/kids-group.jpg" alt="Students with ball hockey sticks" width="585" height="212" loading="lazy" style="object-position:30% 50%"></div><div class="media"><img src="img/kids-group-2.jpg" alt="Students cheering with sticks" width="532" height="258" loading="lazy"></div></div>
+          </div>
+        </article>
+        <article class="ev">
+          <div class="ev-when"><time datetime="2026-04-25">Apr 25, 2026</time><span>Riverfront Park</span></div>
+          <div class="ev-body" data-r>
+            <h3>Arena Rising: Hurricanes Watch Party</h3>
+            <p>A free Carolina Hurricanes playoff watch party with a big screen, live music, games and raffles.</p>
+            <div class="ev-media"><div class="media"><img src="img/aerial.jpg" alt="Aerial view of the watch party" width="905" height="487" loading="lazy"></div><div class="media"><img src="img/flag-fan.jpg" alt="Fan waving a flag" width="312" height="487" loading="lazy" style="object-position:50% 30%"></div></div>
+            <div><a class="tl" href="https://www.youtube.com/watch?v=xrGqmHc-7q0" target="_blank" rel="noopener">Watch behind the scenes <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a></div>
+          </div>
+        </article>
+        <article class="ev">
+          <div class="ev-when"><time>Champions</time><span>Polar Ice House</span></div>
+          <div class="ev-body" data-r>
+            <h3>Coastal Clash tournament win</h3>
+            <p>Team Wilmington Arena Project won the Coastal Clash hockey tournament at the Polar Ice House in Wilmington.</p>
+            <div class="ev-media one"><div class="media"><img src="img/coastal-clash.jpg" alt="The team celebrating with the trophy" width="1126" height="840" loading="lazy" style="object-position:50% 45%"></div></div>
+          </div>
+        </article>
+        <article class="ev">
+          <div class="ev-when"><time datetime="2025-07">July 2025</time><span>Waterman’s Brewing</span></div>
+          <div class="ev-body" data-r>
+            <h3>Our first public event</h3>
+            <p>Live music, a former NHL guest and over $4,000 in raffle prizes donated by local businesses.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= ABOUT ======================= -->
+<div class="view" id="v-about" data-view="about">
+  <section class="phead">
+    <div class="wrap">
+      <div class="crumb" data-head><a href="#home">Home</a><i></i><span>About</span></div>
+      <div class="phead-grid">
+        <h1 class="d h1" data-head-lines><span class="ln"><span>For the</span></span><span class="ln"><span>people, by</span></span><span class="ln"><span>the people.</span></span></h1>
+        <span class="pnum" aria-hidden="true">03</span>
+        <div class="ph-text"><p class="lead">A community-driven initiative to develop a multi-purpose arena that serves our community through sport, education and shared experiences.</p></div>
+        <div class="media ph-media" style="--w:1176px;--a:905/487" data-unveil><img src="img/aerial.jpg" alt="Crowd gathered at Riverfront Park" width="905" height="487"></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-bottom:var(--sec)">
+    <div class="wrap vision">
+      <div data-r><span class="kicker">The vision</span><p class="serif">A 10,000-seat multi-purpose arena for Wilmington, NC.</p><p>As a community-owned nonprofit founded in 2024, our vision is to uplift our youth through sports, education programs and health. Housing professional ice hockey and basketball, the arena will increase community togetherness and boost our local economy.</p></div>
+      <div data-r><span class="kicker">The work today</span><p class="serif">Investing in the community now.</p><p>While we work toward that long-term vision, we run grassroots programming, youth initiatives, mobile activations, community events and public watch parties that bring people together, promote healthy lifestyles and strengthen community pride throughout the Cape Fear region.</p></div>
+    </div>
+  </section>
+  <section class="sec paper">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2 class="d h2" data-lines><span class="ln"><span>Meet the</span></span><span class="ln"><span>founders.</span></span></h2>
+        <p class="lead" data-r>Lifelong friends and local hockey advocates, united to build a lasting home for hockey in Wilmington.</p>
+      </div>
+      <article class="founder">
+        <div class="swap" data-cursor="Flip" tabindex="0" role="button" aria-pressed="false" aria-label="Show Mike playing pro hockey" data-r>
+          <div class="media"><img src="img/mike.jpg" alt="Michael Völlmin" width="732" height="915" loading="lazy"></div>
+          <div class="media alt"><img src="img/mike-pro.jpg" alt="Michael Völlmin playing pro hockey in Switzerland" width="732" height="516" loading="lazy" style="object-position:42% 50%"></div>
+          <span class="swap-hint">Hover to see him on the ice</span>
+        </div>
+        <div class="founder-copy" data-r>
+          <span class="role">President &amp; Founder, Chairman of the Board</span>
+          <h3 class="d">Michael “Mike” Völlmin</h3>
+          <p>Mike grew up in Wilmington and found his passion for hockey when Ogden’s Wilmington Ice House opened in 2006. After earning a finance degree and playing hockey at Babson College, he went on to a decade-long pro career in Switzerland. Knowing how hockey opened doors in his life, he launched the project to give back to his hometown.</p>
+          <div class="actions"><a class="tl" href="https://www.linkedin.com/in/michael-v%C3%B6llmin-97a26b65/" target="_blank" rel="noopener">LinkedIn <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a><a class="tl" href="#contact">Contact Mike <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
+        </div>
+      </article>
+      <article class="founder flip">
+        <div class="swap" data-cursor="Flip" tabindex="0" role="button" aria-pressed="false" aria-label="Show Kyler playing hockey" data-r>
+          <div class="media"><img src="img/kyler.jpg" alt="Kyler Harding" width="732" height="610" loading="lazy" style="object-position:50% 30%"></div>
+          <div class="media alt"><img src="img/kyler-play.jpg" alt="Kyler Harding playing hockey" width="732" height="667" loading="lazy"></div>
+          <span class="swap-hint">Hover to see him on the ice</span>
+        </div>
+        <div class="founder-copy" data-r>
+          <span class="role">Co-Founder, Head of Event Operations</span>
+          <h3 class="d">Kyler Harding</h3>
+          <p>Wilmington born and raised, Kyler played a key role in launching the project’s first public event, securing over $4,000 in donated raffle prizes through local sponsorship outreach. He brings energy, determination and a strong local network to the project.</p>
+          <div class="actions"><a class="tl" href="https://www.linkedin.com/in/kyler-harding-329a05208/" target="_blank" rel="noopener">LinkedIn <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a><a class="tl" href="#contact">Contact Kyler <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="dark sec">
+    <div class="wrap">
+      <div class="tabs-row">
+        <h2 class="d h2" data-lines><span class="ln"><span>The team</span></span><span class="ln"><span>behind it.</span></span></h2>
+        <div class="tablist" role="tablist" aria-label="Team groups" data-r>
+          <i class="ind" aria-hidden="true"></i>
+          <button role="tab" id="t-board" aria-controls="p-board" aria-selected="true">Board</button>
+          <button role="tab" id="t-comm" aria-controls="p-comm" aria-selected="false" tabindex="-1">Committee</button>
+          <button role="tab" id="t-ops" aria-controls="p-ops" aria-selected="false" tabindex="-1">Operations</button>
+        </div>
+      </div>
+      <div class="panels plain" data-r>
+        <div class="panel" role="tabpanel" id="p-board" aria-labelledby="t-board">
+          <div class="roster">
+            <div><b>Bobby Sanguinetti</b><span>Former NHL defenseman with the Carolina Hurricanes, Assistant Coach of the Charlotte Checkers</span></div>
+            <div><b>Ralph Evangelous</b><span>Former Chief of Police of Wilmington</span></div>
+            <div><b>Brian Ferrell</b><span>Corporate attorney, Smith Anderson M&amp;A and Private Equity</span></div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-comm" aria-labelledby="t-comm" hidden>
+          <div class="roster">
+            <div><b>Torey Mitchell</b><span>Former NHL forward, 650+ games played</span></div>
+            <div><b>Ian Faintuck, MBA</b><span>Head of Corporate Sponsorships</span></div>
+            <div><b>Brock McGinn</b><span>Longtime NHL forward, owner of the Roanoke Rail Yard Dawgs</span></div>
+            <div><b>Roger Weismiller</b><span>Financial services, St. Louis stadium and LA Rams background</span></div>
+            <div><b>Sal Lombardi</b><span>NHL, USA Hockey and arena opening experience</span></div>
+            <div><b>Brett Brodie</b><span>Former Wilmington Ice House manager, Carolina Hurricanes</span></div>
+            <div><b>Wesley Kinney</b><span>Youth hockey coach in Wilmington since 2002</span></div>
+            <div><b>Steven Ash</b><span>Business development and sports partnerships</span></div>
+            <div><b>Nolan Tabraham</b><span>President, UNCW Club Ice Hockey</span></div>
+            <div><b>Jamie Miller</b><span>Hockey advocate and community builder</span></div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-ops" aria-labelledby="t-ops" hidden>
+          <div class="roster">
+            <div><b>Elizabeth Vollmin</b><span>Event Coordinator</span></div>
+            <div><b>Lauren McCarty</b><span>Head of Communications</span></div>
+            <div><b>Colton Courtney</b><span>Head Videographer</span></div>
+            <div><b>MoniYah Person</b><span>Social Media Manager</span></div>
+            <div><b>Stephanie Eschler</b><span>Website Design &amp; SEO</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap motto">
+      <p class="d" data-lines><span class="ln"><span>It’s not me,</span></span><span class="ln"><span>it’s we!</span></span></p>
+      <div class="motto-copy" data-r>
+        <p>Our culture is rooted in collaboration, passion and a shared vision for the future of our community: the spirit of teamwork that defines hockey.</p>
+        <p>Want to join the team? Tell us a bit about yourself at <b>michael@wilmingtonarenaproject.com</b>.</p>
+        <div><a class="btn btn-ink" href="#get-involved">Get involved <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= GET INVOLVED ======================= -->
+<div class="view" id="v-get-involved" data-view="get-involved">
+  <section class="phead">
+    <div class="wrap">
+      <div class="crumb" data-head><a href="#home">Home</a><i></i><span>Get Involved</span></div>
+      <div class="phead-grid">
+        <h1 class="d h1" data-head-lines><span class="ln"><span>Get in</span></span><span class="ln"><span>the game.</span></span></h1>
+        <span class="pnum" aria-hidden="true">04</span>
+        <div class="ph-text"><p class="lead">Join as a member, volunteer, bring your business on board or rep the project around town.</p></div>
+        <div class="media ph-media" style="--w:604px;--a:465/300" data-unveil><img src="img/crowd-lawn.jpg" alt="A crowd at the watch party" width="465" height="300"></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-bottom:var(--sec)">
+    <div class="wrap paths">
+      <a class="path" href="https://docs.google.com/forms/d/e/1FAIpQLSfxj6iFb2GHDp1Hev1B_gReHXTdlDhPgm59uBS2YBMdt-Ba9A/viewform" target="_blank" rel="noopener" data-r><span class="d">Become a member</span><p>Sign up to support the project and stay in the loop.</p><span class="circ"><span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></span></a>
+      <a class="path" href="https://docs.google.com/forms/d/e/1FAIpQLSc6JL2rpNPypcsgH5f9YtYlpLYua1bYqNzy5Fj0UrviYid0Kg/viewform" target="_blank" rel="noopener" data-r><span class="d">Volunteer or partner</span><p>Help at events, or connect your local business with the community.</p><span class="circ"><span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></span></a>
+      <a class="path" href="#mobile-arena" data-r><span class="d">Book the mobile arena</span><p>For schools, churches, after school programs and events.</p><span class="circ"><span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></span></a>
+      <a class="path" href="#contact" data-r><span class="d">Sponsor the project</span><p>Corporate sponsorships help fund the next stage of the arena.</p><span class="circ"><span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></span></a>
+    </div>
+  </section>
+  <section class="sec sandbg">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2 class="d h2" data-lines><span class="ln"><span>Wear it</span></span><span class="ln"><span>around town.</span></span></h2>
+        <div style="display:grid;gap:22px;justify-items:start" data-r><p class="lead">Every purchase supports the project.</p><a class="btn btn-ink" href="https://www.bonfire.com/store/the-wilmington-arena-project-merchandise-shop/" target="_blank" rel="noopener">Visit the full shop <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a></div>
+      </div>
+      <div class="merch">
+        <a class="prod" data-cursor="Shop" href="https://www.bonfire.com/the-wilmington-arena-project-drop-1/?productType=adebdd85-9381-4443-b4d8-bc082edba303" target="_blank" rel="noopener" data-r><div class="well"><img src="img/tee.jpg" alt="Classic Tie Dye Tee with the arena logo" width="445" height="440" loading="lazy"></div><div class="meta"><b>Classic Tie Dye Tee</b><span>Shop on Bonfire <span class="ar ne" style="width:14px;height:14px"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></span></div></a>
+        <a class="prod" data-cursor="Shop" href="https://www.bonfire.com/nike-sport-hat/?productType=af4e7122-c27a-4352-910a-35a0705d083f" target="_blank" rel="noopener" data-r><div class="well"><img src="img/cap.jpg" alt="Light blue Nike cap with the arena logo" width="445" height="300" loading="lazy"></div><div class="meta"><b>Nike Dri-FIT Legacy Cap</b><span>Shop on Bonfire <span class="ar ne" style="width:14px;height:14px"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></span></div></a>
+        <a class="prod" data-cursor="Shop" href="https://www.bonfire.com/the-wilmington-arena-project-drop-1/?productType=3b1cab3a-4f42-4b4e-b92b-4a259a4730ce" target="_blank" rel="noopener" data-r><div class="well"><img src="img/crew.jpg" alt="Blue crewneck sweatshirt with the arena logo" width="446" height="380" loading="lazy"></div><div class="meta"><b>Softstyle Crewneck</b><span>Shop on Bonfire <span class="ar ne" style="width:14px;height:14px"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></span></div></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= DONATE ======================= -->
+<div class="view" id="v-donate" data-view="donate">
+  <section class="phead">
+    <div class="wrap">
+      <div class="crumb" data-head><a href="#home">Home</a><i></i><span>Donate</span></div>
+      <div class="don">
+        <div class="phead-copy">
+          <h1 class="d h1" data-head-lines><span class="ln"><span>Help build</span></span><span class="ln"><span>Wilmington’s</span></span><span class="ln"><span>arena.</span></span></h1>
+          <p class="lead" data-head>Your gift funds the programs bringing kids into the sport today and the planning that gets the arena built.</p>
+        </div>
+        <div class="gcard" data-head>
+          <div class="gcard-top">
+            <span class="crest" aria-hidden="true"><svg viewBox="0 0 84 84"><rect width="84" height="84" rx="20" fill="#0B1C3D"/><line x1="42" y1="0" x2="42" y2="84" stroke="#E0362C" stroke-width="2.4"/><circle cx="42" cy="42" r="23" fill="none" stroke="#2D64B6" stroke-width="2.2"/><circle cx="42" cy="42" r="3.4" fill="#fff"/></svg></span>
+            <div><h2>Give to the project</h2><p class="muted">Give through either of the project’s official donation pages.</p></div>
+          </div>
+          <span class="mag"><a class="btn btn-red btn-lg" href="https://givebutter.com/c/arenarising" target="_blank" rel="noopener">Donate on Givebutter <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a></span>
+          <div class="or">or</div>
+          <a class="btn btn-line" href="https://gofund.me/559e80782" target="_blank" rel="noopener">Give on GoFundMe <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a>
+          <div class="tax"><svg><use href="#i-shield"/></svg><span>All donations are tax deductible. EIN 33-2481104.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="dark sec">
+    <div class="wrap">
+      <div class="sec-top">
+        <h2 class="d h2" data-lines><span class="ln"><span>Where your</span></span><span class="ln"><span>gift goes.</span></span></h2>
+        <p class="lead" data-r>Three places your support goes to work.</p>
+      </div>
+      <div class="funds" data-r>
+        <div class="fund on"><img src="img/kids-group-2.jpg" alt="Students at a mobile arena session" width="532" height="258" loading="lazy"><button type="button" aria-label="Youth programs"></button><div class="fund-c"><span class="d">Youth programs</span><p>The mobile arena and grassroots programs that put sticks in kids’ hands.</p></div></div>
+        <div class="fund"><img src="img/crowd-lawn.jpg" alt="Community watch party" width="465" height="300" loading="lazy"><button type="button" aria-label="Community events"></button><div class="fund-c"><span class="d">Community events</span><p>Free watch parties and gatherings that bring Wilmington together.</p></div></div>
+        <div class="fund"><img src="img/aerial.jpg" alt="Riverfront Park from above" width="905" height="487" loading="lazy"><button type="button" aria-label="The arena"></button><div class="fund-c"><span class="d">The arena</span><p>Feasibility studies, architectural planning and phase 1 construction.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap more2">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxj6iFb2GHDp1Hev1B_gReHXTdlDhPgm59uBS2YBMdt-Ba9A/viewform" target="_blank" rel="noopener" data-r><span class="d">Become a member</span><p>Join the community behind the arena.</p><span class="circ"><span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></span></a>
+      <a href="#get-involved" data-r><span class="d">Shop the merch</span><p>Tees, caps and crewnecks that support the project.</p><span class="circ"><span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></span></a>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= CONTACT ======================= -->
+<div class="view" id="v-contact" data-view="contact">
+  <section class="phead">
+    <div class="wrap">
+      <div class="crumb" data-head><a href="#home">Home</a><i></i><span>Contact</span></div>
+      <div class="contact">
+        <div class="phead-copy" style="align-content:start">
+          <h1 class="d h1" data-head-lines><span class="ln"><span>Let’s</span></span><span class="ln"><span>talk.</span></span></h1>
+          <p class="lead" data-head>Questions about the project, bookings or sponsorships? Reach out.</p>
+          <div class="lines" data-head>
+            <div class="cline"><small>Project and sponsorships</small><div class="r"><strong id="c1">michael@wilmingtonarenaproject.com</strong><button class="copybtn" type="button" data-copy="c1" aria-label="Copy Michael’s email"><svg class="cp"><use href="#i-copy"/></svg><svg class="ok"><use href="#i-check"/></svg><span>Copy</span></button></div></div>
+            <div class="cline"><small>Phone</small><div class="r"><strong id="c2">(910) 319-1052</strong><button class="copybtn" type="button" data-copy="c2" aria-label="Copy phone number"><svg class="cp"><use href="#i-copy"/></svg><svg class="ok"><use href="#i-check"/></svg><span>Copy</span></button></div></div>
+            <div class="cline"><small>Events and mobile arena</small><div class="r"><strong id="c3">Kyler@wilmingtonarenaproject.com</strong><button class="copybtn" type="button" data-copy="c3" aria-label="Copy Kyler’s email"><svg class="cp"><use href="#i-copy"/></svg><svg class="ok"><use href="#i-check"/></svg><span>Copy</span></button></div></div>
+          </div>
+        </div>
+        <form class="form" id="cf" novalidate data-head>
+          <h2>Send a message</h2>
+          <div class="f2">
+            <div class="fld"><input id="cf-name" name="name" autocomplete="name" placeholder=" " required><label for="cf-name">Name</label><span class="msg">Please add your name.</span></div>
+            <div class="fld"><input id="cf-email" name="email" type="email" autocomplete="email" placeholder=" " required><label for="cf-email">Email</label><span class="msg">Please add a valid email.</span></div>
+          </div>
+          <div class="fld sel"><select id="cf-topic" name="topic"><option>General question</option><option>Book the mobile arena</option><option>Sponsorship</option><option>Volunteering</option><option>Media</option></select><label for="cf-topic">Topic</label><svg class="chev"><use href="#i-chev"/></svg></div>
+          <div class="fld"><textarea id="cf-msg" name="message" rows="5" placeholder=" " required></textarea><label for="cf-msg">Message</label><span class="msg">Please write a short message.</span></div>
+          <button class="btn btn-red btn-lg send" type="submit"><span class="lbl">Send message</span><span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span><span class="spin" aria-hidden="true"></span></button>
+          <p class="note">Preview only: on the live site this form will deliver straight to the project inbox.</p>
+          <div class="sent" role="status" aria-live="polite">
+            <span class="tick"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h2>Thanks, it’s in.</h2>
+            <p class="muted">This is a preview, so nothing was sent. On the live site your message goes straight to the project inbox.</p>
+            <button class="btn btn-line btn-sm" type="button" id="cfAgain">Write another</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="f-top">
+      <div style="display:grid;gap:20px;align-content:start;justify-items:start"><img src="img/logo-white.png" alt="The Wilmington Arena Project" width="670" height="335" loading="lazy"><p>Working toward Wilmington, North Carolina’s first multi-purpose arena.</p></div>
+      <div class="f-col"><h4>Explore</h4><a href="#mobile-arena">Mobile Arena</a><a href="#events">Events</a><a href="#about">About</a><a href="#get-involved">Get Involved</a></div>
+      <div class="f-col"><h4>Support</h4><a href="#donate">Donate</a><a href="https://givebutter.com/c/arenarising" target="_blank" rel="noopener">Givebutter</a><a href="https://gofund.me/559e80782" target="_blank" rel="noopener">GoFundMe</a><a href="https://www.bonfire.com/store/the-wilmington-arena-project-merchandise-shop/" target="_blank" rel="noopener">Merch shop</a></div>
+      <div class="f-col"><h4>Contact</h4><span>michael@wilmingtonarenaproject.com</span><span>(910) 319-1052</span><a href="https://www.youtube.com/channel/UCMXsMUkWm6Ts63TWS901gPA" target="_blank" rel="noopener">YouTube</a><a href="#contact">Send a message</a></div>
+    </div>
+    <div class="f-word" aria-hidden="true">Arena Project</div>
+    <div class="f-legal"><span>Registered in the State of North Carolina · Certification No. C202433000004-1 · EIN 33-2481104</span><span>Site concept by BuildSiteCo</span></div>
+  </div>
+</footer>
+
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+  var G=window.gsap, ST=window.ScrollTrigger;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var motion=!!(G&&ST)&&!reduce;
+  if(motion){G.registerPlugin(ST);ST.config({ignoreMobileResize:true});}
+  var fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ---------- routing ---------- */
+  var views=$$('.view'), names=views.map(function(v){return v.dataset.view});
+  var titles={home:'','mobile-arena':'Mobile Arena','events':'Events','about':'About','get-involved':'Get Involved','donate':'Donate','contact':'Contact'};
+  var main=$('#main'), current=null, inited={}, first=true;
+  function routeName(){var h=(location.hash||'').slice(1);return names.indexOf(h)<0?'home':h}
+  function setNav(n){
+    $$('.nav a.nl, .mm nav a').forEach(function(a){ if(a.getAttribute('href')==='#'+n) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    document.title=(titles[n]?titles[n]+' · ':'')+'The Wilmington Arena Project';
+  }
+  function swap(n){
+    views.forEach(function(v){v.classList.toggle('on',v.dataset.view===n)});
+    current=n; setNav(n); window.scrollTo(0,0);
+    var v=$('#v-'+n);
+    if(!inited[n]){inited[n]=true; initView(v,n);} else if(motion) ST.refresh();
+    intro(v,n);
+    if(!first) main.focus({preventScroll:true});
+  }
+  function go(){
+    var n=routeName(); closeMenu();
+    if(n===current){window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});return}
+    if(first||!motion){swap(n);first=false;return}
+    main.classList.add('leaving');
+    setTimeout(function(){swap(n);requestAnimationFrame(function(){main.classList.remove('leaving')})},260);
+  }
+
+  /* ---------- intros ---------- */
+  function intro(v,n){
+    if(!motion) return;
+    if(n==='home'){ heroIntro(); return; }
+    var tl=G.timeline({defaults:{ease:'expo.out'}});
+    tl.fromTo($$('[data-head-lines] .ln>span',v),{yPercent:108},{yPercent:0,duration:1.2,stagger:.08},.05)
+      .fromTo($$('[data-head]',v),{opacity:0,y:26},{opacity:1,y:0,duration:1,stagger:.07},.25)
+      .fromTo($$('.pnum',v),{opacity:0,yPercent:24},{opacity:1,yPercent:0,duration:1.6},.15)
+      .fromTo($$('.ph-text',v),{opacity:0,y:26},{opacity:1,y:0,duration:1},.45);
+  }
+  function heroIntro(){
+    var v=$('#v-home');
+    var tl=G.timeline({defaults:{ease:'expo.out'}});
+    tl.fromTo($$('.hero-h .ln>span',v),{yPercent:110},{yPercent:0,duration:1.35,stagger:.09},.1)
+      .fromTo('.hero .rink .cl',{scaleY:0},{scaleY:1,duration:1.6,ease:'power3.inOut'},0)
+      .fromTo('.hero .rink .c1',{strokeDasharray:'1 1',strokeDashoffset:1},{strokeDashoffset:0,duration:1.8,ease:'power2.inOut'},.2)
+      .fromTo('.hero-ph',{clipPath:'inset(50% 0% 50% 0% round 26px)'},{clipPath:'inset(0% 0% 0% 0% round 26px)',duration:1.5,ease:'expo.inOut'},.35)
+      .fromTo('.hero-ph img',{scale:1.3},{scale:1,duration:2.2},.35)
+      .fromTo('.hero-inset',{opacity:0,y:60,rotate:3},{opacity:1,y:0,rotate:0,duration:1.3},1)
+      .fromTo($$('[data-hero]',v),{opacity:0,y:24},{opacity:1,y:0,duration:1.1,stagger:.08},.8);
+  }
+
+  /* ---------- per-view setup ---------- */
+  function initView(v,n){
+    setupTabs(v); setupMag(v); setupSwap(v); setupFunds(v);
+    if(!motion) return;
+    $$('[data-lines]',v).forEach(function(h){
+      G.fromTo($$('.ln>span',h),{yPercent:108},{yPercent:0,duration:1.25,ease:'expo.out',stagger:.08,scrollTrigger:{trigger:h,start:'top 90%',once:true}});
+    });
+    var rs=$$('[data-r]',v);
+    if(rs.length){
+      G.set(rs,{opacity:0,y:44});
+      ST.batch(rs,{start:'top 94%',once:true,onEnter:function(b){G.to(b,{opacity:1,y:0,duration:1.1,ease:'expo.out',stagger:.09,overwrite:true})}});
+    }
+    $$('[data-unveil]',v).forEach(function(m){
+      var img=$('img',m);
+      G.timeline({scrollTrigger:{trigger:m,start:'top 90%',once:true}})
+       .fromTo(m,{clipPath:'inset(0% 0% 100% 0% round 26px)'},{clipPath:'inset(0% 0% 0% 0% round 26px)',duration:1.4,ease:'expo.inOut'})
+       .fromTo(img,{scale:1.35},{scale:1,duration:2,ease:'expo.out'},0);
+    });
+    $$('[data-speed]',v).forEach(function(el){
+      var s=parseFloat(el.dataset.speed)||1;
+      G.to(el,{y:function(){return (1-s)*window.innerHeight*.5},ease:'none',scrollTrigger:{trigger:el.closest('section'),start:'top top',end:'bottom top',scrub:true,invalidateOnRefresh:true}});
+    });
+    $$('[data-words]',v).forEach(function(p){
+      var words=p.textContent.trim().split(/\s+/);
+      p.setAttribute('aria-label',p.textContent.trim());
+      p.innerHTML=words.map(function(w){return '<span class="w" aria-hidden="true">'+w+'</span>'}).join(' ');
+      G.fromTo($$('.w',p),{opacity:.18},{opacity:1,ease:'none',stagger:.1,scrollTrigger:{trigger:p,start:'top 82%',end:'bottom 50%',scrub:.6}});
+    });
+    $$('.stmt-mark',v).forEach(function(m){G.fromTo(m,{rotate:-25},{rotate:25,ease:'none',scrollTrigger:{trigger:m.parentNode,start:'top bottom',end:'bottom top',scrub:true}})});
+    $$('.give',v).forEach(function(g){
+      G.timeline({scrollTrigger:{trigger:g,start:'top 70%',once:true}})
+        .fromTo($('.give-line',g),{scaleY:0},{scaleY:1,duration:1.4,ease:'power3.inOut'})
+        .fromTo($('.give-ring circle',g),{strokeDasharray:'1 1',strokeDashoffset:1},{strokeDashoffset:0,duration:2,ease:'power2.inOut'},.1);
+    });
+    $$('.rising',v).forEach(function(sec){
+      var mm=G.matchMedia();
+      mm.add('(min-width: 900px)',function(){
+        sec.classList.add('pinned');
+        var track=$('.rise-track',sec), pin=$('.rise-pin',sec);
+        var dist=function(){return Math.max(0,track.scrollWidth-window.innerWidth)};
+        var tw=G.to(track,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:pin,start:'top top',end:function(){return '+='+dist()},pin:true,scrub:.8,invalidateOnRefresh:true,anticipatePin:1}});
+        $$('.rp .media img',sec).forEach(function(img){G.fromTo(img,{scale:1.2},{scale:1,ease:'none',scrollTrigger:{trigger:img.closest('.rp'),containerAnimation:tw,start:'left right',end:'center center',scrub:true}})});
+        return function(){sec.classList.remove('pinned')};
+      });
+    });
+    $$('[data-steps], [data-tline]',v).forEach(function(w){
+      G.fromTo($('.rail i',w),{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:w,start:'top 70%',end:'bottom 70%',scrub:true}});
+    });
+    $$('[data-count]',v).forEach(function(el){
+      var to=+el.dataset.count, o={n:0};
+      el.textContent='0';
+      G.to(o,{n:to,duration:2.2,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true},onUpdate:function(){el.textContent=Math.round(o.n).toLocaleString('en-US')}});
+    });
+    $$('.ticker',v).forEach(function(t){
+      var tr=$('.tk-track',t), sk=G.quickTo(tr,'skewX',{duration:.5,ease:'power3.out'});
+      ST.create({trigger:t,start:'top bottom',end:'bottom top',onUpdate:function(self){sk(G.utils.clamp(-8,8,self.getVelocity()/-260))}});
+    });
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ST.refresh()});
+  }
+
+  /* ---------- tabs ---------- */
+  function setupTabs(v){
+    $$('[role=tablist]',v).forEach(function(list){
+      var tabs=$$('[role=tab]',list), ind=$('.ind',list);
+      function selected(){return tabs.filter(function(t){return t.getAttribute('aria-selected')==='true'})[0]||tabs[0]}
+      function place(t){ if(!ind||!t.offsetWidth) return; ind.style.width=t.offsetWidth+'px'; ind.style.transform='translateX('+t.offsetLeft+'px)'; }
+      function sel(t,focus){
+        tabs.forEach(function(x){
+          var on=x===t, p=document.getElementById(x.getAttribute('aria-controls'));
+          x.setAttribute('aria-selected',on); x.tabIndex=on?0:-1;
+          if(p){ var was=p.hidden; p.hidden=!on; if(on&&was&&motion&&p.parentNode.classList.contains('plain')) G.fromTo($$('.roster>div',p),{opacity:0,y:14},{opacity:1,y:0,duration:.6,stagger:.03,ease:'expo.out'}); }
+        });
+        place(t); if(focus) t.focus(); if(motion) ST.refresh();
+      }
+      tabs.forEach(function(t,i){
+        t.addEventListener('click',function(){sel(t)});
+        t.addEventListener('keydown',function(e){
+          var k=e.key, j=null;
+          if(k==='ArrowRight') j=(i+1)%tabs.length; else if(k==='ArrowLeft') j=(i-1+tabs.length)%tabs.length; else if(k==='Home') j=0; else if(k==='End') j=tabs.length-1;
+          if(j!==null){e.preventDefault();sel(tabs[j],true)}
+        });
+      });
+      requestAnimationFrame(function(){place(selected())});
+      window.addEventListener('resize',function(){place(selected())});
+      if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){place(selected())});
+    });
+  }
+
+  /* ---------- micro ---------- */
+  function setupMag(v){
+    if(!motion||!fine) return;
+    $$('.mag',v).forEach(function(m){
+      var xTo=G.quickTo(m,'x',{duration:.6,ease:'power3.out'}), yTo=G.quickTo(m,'y',{duration:.6,ease:'power3.out'});
+      m.addEventListener('pointermove',function(e){var r=m.getBoundingClientRect();xTo((e.clientX-r.left-r.width/2)*.22);yTo((e.clientY-r.top-r.height/2)*.34)});
+      m.addEventListener('pointerleave',function(){xTo(0);yTo(0)});
+    });
+  }
+  function setupSwap(v){
+    $$('.swap',v).forEach(function(s){
+      var hint=$('.swap-hint',s);
+      if(!fine&&hint) hint.textContent='Tap to see him on the ice';
+      function t(){var on=s.classList.toggle('on');s.setAttribute('aria-pressed',on)}
+      s.addEventListener('click',t);
+      s.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+    });
+  }
+  function setupFunds(v){
+    var fs=$$('.fund',v); if(!fs.length) return;
+    fs.forEach(function(f){
+      function on(){fs.forEach(function(x){x.classList.toggle('on',x===f)})}
+      f.addEventListener('mouseenter',on);
+      var b=$('button',f); if(b){b.addEventListener('focus',on);b.addEventListener('click',on)}
+    });
+  }
+
+  /* ---------- header ---------- */
+  var hdr=$('#hdr'), prog=$('.prog i'), lastY=0, ticking=false;
+  function onScroll(){
+    var y=window.scrollY, h=document.documentElement.scrollHeight-innerHeight;
+    hdr.classList.toggle('scrolled',y>12);
+    if(y>lastY+4&&y>360) hdr.classList.add('hide'); else if(y<lastY-4||y<360) hdr.classList.remove('hide');
+    lastY=y; prog.style.setProperty('--p',h>0?Math.min(1,y/h).toFixed(4):0); ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
+  document.addEventListener('focusin',function(e){if(hdr.contains(e.target))hdr.classList.remove('hide')});
+
+  /* ---------- menu ---------- */
+  var mm=$('#mm'), mb=$('#menuBtn'), ml=$('#menuLbl');
+  function openMenu(){mm.classList.add('open');hdr.classList.add('menu-open');mb.setAttribute('aria-expanded','true');ml.textContent='Close';document.documentElement.style.overflow='hidden';setTimeout(function(){var a=$('nav a',mm);a&&a.focus({preventScroll:true})},350)}
+  function closeMenu(){if(!mm.classList.contains('open'))return;mm.classList.remove('open');hdr.classList.remove('menu-open');mb.setAttribute('aria-expanded','false');ml.textContent='Menu';document.documentElement.style.overflow=''}
+  mb.addEventListener('click',function(){mm.classList.contains('open')?closeMenu():openMenu()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mm.classList.contains('open')){closeMenu();mb.focus()}});
+  $$('a',mm).forEach(function(a){a.addEventListener('click',function(){if(a.getAttribute('href')==='#'+current)closeMenu()})});
+  window.addEventListener('resize',function(){if(innerWidth>1020)closeMenu()});
+
+  /* ---------- copy ---------- */
+  $$('.copybtn').forEach(function(b){
+    var lbl=$('span',b);
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.dataset.copy), txt=el.textContent;
+      function done(t){b.classList.add('done');lbl.textContent=t;setTimeout(function(){b.classList.remove('done');lbl.textContent='Copy'},1800)}
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);done('Selected')}
+      try{navigator.clipboard.writeText(txt).then(function(){done('Copied')},sel)}catch(e){sel()}
+    });
+  });
+
+  /* ---------- form ---------- */
+  var f=$('#cf');
+  function check(el){
+    var w=el.closest('.fld'), ok=el.value.trim().length>0;
+    if(el.type==='email') ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim());
+    w.classList.toggle('err',!ok); w.classList.toggle('ok-f',ok); el.setAttribute('aria-invalid',!ok); return ok;
+  }
+  $$('[required]',f).forEach(function(el){
+    el.addEventListener('blur',function(){if(el.value)check(el)});
+    el.addEventListener('input',function(){if(el.closest('.fld').classList.contains('err'))check(el)});
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=$$('[required]',f).filter(function(el){return !check(el)});
+    if(bad.length){bad[0].focus();return}
+    var btn=$('.send',f); btn.classList.add('busy'); btn.disabled=true; $('.lbl',btn).textContent='Sending';
+    setTimeout(function(){
+      f.classList.add('done'); btn.classList.remove('busy'); btn.disabled=false; $('.lbl',btn).textContent='Send message';
+      var h=$('.sent h2',f); h.setAttribute('tabindex','-1'); h.focus();
+    },1100);
+  });
+  $('#cfAgain').addEventListener('click',function(){f.reset();f.classList.remove('done');$$('.fld',f).forEach(function(w){w.classList.remove('err','ok-f')});$('#cf-name').focus()});
+
+  /* ---------- cursor ---------- */
+  (function(){
+    if(!motion||!fine) return;
+    var c=$('#cursor'), lbl=$('#cursorLbl');
+    document.documentElement.classList.add('has-cursor');
+    var xTo=G.quickTo(c,'x',{duration:.45,ease:'power3.out'}), yTo=G.quickTo(c,'y',{duration:.45,ease:'power3.out'});
+    window.addEventListener('pointermove',function(e){xTo(e.clientX);yTo(e.clientY)},{passive:true});
+    document.addEventListener('pointerover',function(e){
+      var t=e.target.closest&&e.target.closest('[data-cursor]');
+      if(t){lbl.textContent=t.dataset.cursor;c.classList.toggle('ink',t.hasAttribute('data-cursor-ink'));c.classList.add('on')}
+      else c.classList.remove('on');
+    });
+    document.addEventListener('pointerleave',function(){c.classList.remove('on')});
+    window.addEventListener('hashchange',function(){c.classList.remove('on')});
+  })();
+
+  window.addEventListener('hashchange',go);
+  go(); onScroll();
+})();
+</script>
+
+</body>
+</html>
