@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="img/logo-navy.png">
 <meta property="og:title" content="The Wilmington Arena Project">
 <meta property="og:description" content="The Wilmington Arena Project is a community-owned nonprofit working toward Wilmington, North Carolina's first multi-purpose arena.">
-<meta property="og:image" content="img/coastal-clash.jpg">
+<meta property="og:image" content="img/multipurpose.jpg">
 <meta property="og:type" content="website">
 <title>Wilmington Arena Project</title>
 <meta name="description" content="The Wilmington Arena Project is a community-owned nonprofit working toward Wilmington, North Carolina's first multi-purpose arena.">
@@ -596,6 +596,54 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
+
+/* nov 23 edits */
+@media (max-width:560px){.hero-inset figcaption span+span{display:none}}
+.brand img{height:64px}
+.hdr.scrolled .brand img{height:52px}
+.hero-ph::after{display:none}
+@media (max-width:560px){.brand img{height:54px}.hdr.scrolled .brand img{height:46px}}
+.hero-h{font-size:clamp(3.2rem,7.2vw,7.6rem)}
+.hero-art{aspect-ratio:1/1.02}
+.hero-ph{left:6%;right:0;top:0;aspect-ratio:1/.86}
+.hero-ph img{object-position:50% 50%}
+.hero-inset{width:44%;bottom:0}
+.hero-inset-2{left:0;right:auto;bottom:11%;width:40%;z-index:4}
+.hero-inset-2 .media{aspect-ratio:4/3}
+.hero-inset-2 .media img{object-position:50% 62%}
+.stmt-long{font-size:clamp(1.6rem,2.55vw,2.75rem);line-height:1.16;max-width:32ch}
+.nowlist{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.nowlist li{display:grid;gap:2px;padding-left:18px;position:relative;color:var(--ink-2)}
+.nowlist li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--red)}
+.nowlist b{color:var(--ink);font-weight:600}
+.panel .media .ph-cap{z-index:2}
+.quote-pics{position:relative;max-width:470px;width:100%}
+.quote-pics>.media{aspect-ratio:4/5}
+.q-inset{position:absolute;right:-14%;bottom:-9%;width:58%;margin:0;padding:7px 7px 0;background:var(--paper);border-radius:calc(var(--r) - 4px);box-shadow:0 30px 60px -28px rgba(10,26,54,.5)}
+.q-inset .media{aspect-ratio:732/516;border-radius:calc(var(--r) - 10px)}
+.q-inset figcaption{padding:9px 5px 10px;font-size:12px;font-weight:600;color:var(--ink-2)}
+.coach{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px);align-items:center}
+.coach .media{aspect-ratio:586/562;max-width:520px;width:100%}
+.coach-copy{display:grid;gap:22px}
+.coach-copy .h2{margin:0}
+.fpic{position:relative;aspect-ratio:4/5;max-width:500px;width:100%;border-radius:var(--r)}
+.fpic .media{position:absolute;inset:0}
+@media (max-width:900px){
+  .hero-h{font-size:clamp(3rem,13.4vw,6.4rem)}
+  .hero-art{aspect-ratio:1/1.0}
+  .hero-ph{left:4%}
+  .hero-inset{width:46%}
+  .hero-inset-2{width:42%;bottom:13%}
+}
+@media (max-width:820px){.quote-pics{max-width:440px}.q-inset{right:-2%;width:54%}.quote{row-gap:72px}}
+@media (max-width:820px){.coach{grid-template-columns:1fr}}
+@media (max-width:560px){
+  .hero-art{aspect-ratio:1/1.08}
+  .hero-ph{left:0;right:0;aspect-ratio:1/.9}
+  .hero-inset{width:50%;right:-4px}
+  .hero-inset-2{width:46%;left:-4px;bottom:15%}
+  .hero-inset-2 figcaption span:last-child{display:none}
+}
 </style>
 </head>
 <body>
@@ -618,12 +666,12 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
 <header class="hdr" id="hdr">
   <div class="wrap bar">
     <a class="brand" href="#home" aria-label="The Wilmington Arena Project, home">
-      <img class="dk" src="img/logo-navy.png" alt="" width="670" height="335">
-      <img class="lw" src="img/logo-white.png" alt="" width="670" height="335">
+      <img class="dk" src="img/logo-navy.png" alt="" width="1000" height="502">
+      <img class="lw" src="img/logo-white.png" alt="" width="1000" height="502">
     </a>
     <nav class="nav" aria-label="Main">
       <a class="nl" href="#mobile-arena">Mobile Arena</a>
-      <a class="nl" href="#events">Events</a>
+      <a class="nl" href="#timeline">Timeline</a>
       <a class="nl" href="#about">About</a>
       <a class="nl" href="#get-involved">Get Involved</a>
       <a class="nl" href="#contact">Contact</a>
@@ -638,7 +686,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
   <nav aria-label="Mobile">
     <a href="#home" style="--i:0">Home</a>
     <a href="#mobile-arena" style="--i:1">Mobile Arena <small>Book it</small></a>
-    <a href="#events" style="--i:2">Events</a>
+    <a href="#timeline" style="--i:2">Timeline</a>
     <a href="#about" style="--i:3">About</a>
     <a href="#get-involved" style="--i:4">Get Involved</a>
     <a href="#contact" style="--i:5">Contact</a>
@@ -657,13 +705,13 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
     <div class="wrap">
       <div class="hero-grid">
         <h1 class="d hero-h" id="hero-h">
-          <span class="ln"><span>Building</span></span>
-          <span class="ln"><span>Wilmington</span></span>
-          <span class="ln"><span>a home</span></span>
-          <span class="ln"><span>for hockey.</span></span>
+          <span class="ln"><span>Wilmington’s</span></span>
+          <span class="ln"><span>first</span></span>
+          <span class="ln"><span>multi-purpose</span></span>
+          <span class="ln"><span>arena.</span></span>
         </h1>
         <div class="hero-copy">
-          <p class="lead" data-hero>A community-owned nonprofit working toward Wilmington, North Carolina’s first multi-purpose arena, and bringing people together through sport right now.</p>
+          <p class="lead" data-hero>A community-owned nonprofit building a home for sport, education and shared experiences, and bringing people together across the Cape Fear region right now.</p>
           <div class="actions" data-hero>
             <span class="mag"><a class="btn btn-red btn-lg" href="#donate">Donate <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></span>
             <a class="btn btn-line btn-lg" href="#mobile-arena">Book the mobile arena</a>
@@ -674,7 +722,8 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
             <i class="cl"></i>
             <svg viewBox="0 0 100 100"><circle class="c1" cx="50" cy="50" r="46" fill="none" stroke="#2D64B6" stroke-width=".32" pathLength="1"/><circle cx="50" cy="50" r="1.1" fill="#2D64B6"/></svg>
           </div>
-          <div class="media hero-ph" data-speed=".92"><img src="img/coastal-clash.jpg" alt="Team Wilmington Arena Project in light blue jerseys celebrating with the Coastal Clash trophy on the ice" width="1126" height="840" fetchpriority="high"><span class="ph-cap" data-hero><b>Coastal Clash champions</b>Polar Ice House, Wilmington</span></div>
+          <div class="media hero-ph" data-speed=".92"><img src="img/multipurpose.jpg" alt="Concept image of the arena hosting basketball, a concert, a rodeo, monster trucks, a circus, hockey and a boat show" width="1672" height="941" fetchpriority="high"></div>
+          <figure class="hero-inset hero-inset-2" data-speed="1.06"><div class="media"><img src="img/mobile-rink.jpg" alt="The Mobile Ball Hockey Arena set up in a parking lot with its trailer" width="1600" height="1200"></div><figcaption><span>Mobile Arena</span><span>On the road</span></figcaption></figure>
           <figure class="hero-inset" data-speed="1.12"><div class="media"><img src="img/crowd-lawn.jpg" alt="Fans in lawn chairs at the Arena Rising watch party" width="465" height="300"></div><figcaption><span>Arena Rising</span><span>Apr 25, 2026</span></figcaption></figure>
         </div>
       </div>
@@ -687,7 +736,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="true"><div class="tk-track"><div class="tk-set"><span>Mobile Ball Hockey Arena</span><i></i><span>Arena Rising</span><i></i><span>Coastal Clash champions</span><i></i><span>Youth programs</span><i></i><span>Founded 2024</span><i></i><span>Cape Fear region</span><i></i></div><div class="tk-set"><span>Mobile Ball Hockey Arena</span><i></i><span>Arena Rising</span><i></i><span>Coastal Clash champions</span><i></i><span>Youth programs</span><i></i><span>Founded 2024</span><i></i><span>Cape Fear region</span><i></i></div></div></div>
+  <div class="ticker" aria-hidden="true"><div class="tk-track"><div class="tk-set"><span>Multi-purpose arena</span><i></i><span>Mobile Ball Hockey Arena</span><i></i><span>Arena Rising</span><i></i><span>Watch parties</span><i></i><span>Youth programs</span><i></i><span>Founded 2024</span><i></i><span>Cape Fear region</span><i></i></div><div class="tk-set"><span>Multi-purpose arena</span><i></i><span>Mobile Ball Hockey Arena</span><i></i><span>Arena Rising</span><i></i><span>Watch parties</span><i></i><span>Youth programs</span><i></i><span>Founded 2024</span><i></i><span>Cape Fear region</span><i></i></div></div></div>
 
   <section class="dark stmt" aria-label="Our mission">
     <div class="stmt-mark" aria-hidden="true">
@@ -696,16 +745,16 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
     <div class="wrap">
       <div class="stmt-grid">
       <div>
-      <span class="label">The project</span>
-      <p class="stmt-t" data-words>Wilmington deserves a home for the game. We’re working toward a 10,000-seat arena for hockey, basketball, concerts and community, and we’re not waiting for it to open to bring people together.</p>
+      <span class="label">Our mission</span>
+      <p class="stmt-t stmt-long" data-words>The Wilmington Arena Project is a community-driven initiative with the goal of developing a multi-purpose arena that serves our community through sport, education, and shared experiences. Providing an inclusive hub for athletics, cultural events, youth engagement, and community connection that enhances quality of life for all residents.</p>
       <div class="stmt-row">
         <a class="tl" href="#about">Our mission <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
-        <a class="tl" href="#events">What we’ve done so far <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
+        <a class="tl" href="#timeline">What we’ve done so far <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
       </div>
       </div>
       <dl class="stats" data-r>
-        <div><dt class="d"><span data-count="10000">10,000</span></dt><dd>Seats planned for Wilmington’s multi-purpose arena</dd></div>
-        <div><dt class="d"><span data-count="100">100</span></dt><dd>Nearly that many students played in the mobile arena’s first sessions</dd></div>
+        <div><dt class="d"><span data-count="1000">1,000</span>+</dt><dd>Students have played in our Mobile Ball Hockey Arena</dd></div>
+        <div><dt class="d"><span data-count="500">500</span>+</dt><dd>Members, volunteers and supporters</dd></div>
         <div><dt class="d">2024</dt><dd>The year the community-owned nonprofit was founded</dd></div>
       </dl>
       </div>
@@ -715,25 +764,39 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
   <section class="sec" aria-labelledby="ways-h">
     <div class="wrap">
       <div class="tabs-row">
-        <h2 class="d h2" id="ways-h" data-lines><span class="ln"><span>Two ways</span></span><span class="ln"><span>we’re building.</span></span></h2>
-        <div class="tablist" role="tablist" aria-label="Two ways we’re building" data-r>
+        <h2 class="d h2" id="ways-h" data-lines><span class="ln"><span>How we’re</span></span><span class="ln"><span>building it.</span></span></h2>
+        <div class="tablist" role="tablist" aria-label="How we’re building it" data-r>
           <i class="ind" aria-hidden="true"></i>
           <button role="tab" id="t-now" aria-controls="p-now" aria-selected="true">Right now</button>
+          <button role="tab" id="t-next" aria-controls="p-next" aria-selected="false" tabindex="-1">Spring 2027</button>
           <button role="tab" id="t-goal" aria-controls="p-goal" aria-selected="false" tabindex="-1">The goal</button>
         </div>
       </div>
       <div class="panels" data-r>
         <div class="panel" role="tabpanel" id="p-now" aria-labelledby="t-now">
-          <a class="media zoom" data-cursor="Open" href="#mobile-arena" aria-label="See the mobile arena" style="aspect-ratio:585/250"><img src="img/kids-group.jpg" alt="Students in purple shirts holding ball hockey sticks in the air" width="585" height="212" loading="lazy"></a>
+          <a class="media zoom" data-cursor="Open" href="#mobile-arena" aria-label="See the mobile arena" style="aspect-ratio:585/250"><img src="img/mobile-group.jpg" alt="A group of players with sticks on a ball hockey rink" width="1600" height="1200" loading="lazy" style="object-position:50% 62%"></a>
           <div class="panel-copy">
             <span class="kicker">Right now</span>
-            <p class="serif">Programs that put sticks in kids’ hands.</p>
-            <p>Grassroots programming, youth initiatives, mobile activations, community events and public watch parties across the Cape Fear region.</p>
+            <p class="serif">Grassroots work across the Cape Fear region.</p>
+            <ul class="nowlist">
+              <li><b>Grassroots initiatives</b>Youth programs that bring people together through sport.</li>
+              <li><b>Mobile activations</b>Our Mobile Ball Hockey Arena at schools, churches and events.</li>
+              <li><b>Watch parties</b>Free public events like Arena Rising at Riverfront Park.</li>
+            </ul>
             <div><a class="tl" href="#mobile-arena">See the mobile arena <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
           </div>
         </div>
+        <div class="panel" role="tabpanel" id="p-next" aria-labelledby="t-next" hidden>
+          <a class="media zoom" data-cursor="Open" href="#timeline" aria-label="See the timeline" style="aspect-ratio:585/250"><img src="img/mobile-boy.jpg" alt="A student shooting a ball during a ball hockey drill" width="830" height="461" loading="lazy" style="object-position:50% 55%"><span class="ph-cap"><b>Coming spring 2027</b>NHL Street youth ball hockey</span></a>
+          <div class="panel-copy">
+            <span class="kicker">Coming spring 2027</span>
+            <p class="serif">NHL Street youth ball hockey.</p>
+            <p>A structured youth ball hockey program coming to Wilmington in the spring of 2027, building on what kids are already learning in our mobile arena.</p>
+            <div><a class="tl" href="#contact">Ask about NHL Street <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
+          </div>
+        </div>
         <div class="panel" role="tabpanel" id="p-goal" aria-labelledby="t-goal" hidden>
-          <a class="media zoom" data-cursor="Open" href="#about" aria-label="Read our mission" style="aspect-ratio:585/250"><img src="img/aerial.jpg" alt="Aerial view of a crowd at Riverfront Park for the Arena Rising watch party" width="905" height="487" loading="lazy"></a>
+          <a class="media zoom" data-cursor="Open" href="#about" aria-label="Read our mission" style="aspect-ratio:585/250"><img src="img/multipurpose.jpg" alt="Concept image of the arena with basketball, a concert, a rodeo, monster trucks, a circus, hockey and a boat show happening at once" width="1672" height="941" loading="lazy"></a>
           <div class="panel-copy">
             <span class="kicker">The goal</span>
             <p class="serif">A 10,000-seat multi-purpose arena.</p>
@@ -757,7 +820,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
         </div>
       </div>
       <div class="mob-media">
-        <div class="media m1" data-unveil><img src="img/kids-group-2.jpg" alt="A group of students cheering with hockey sticks next to the mobile arena trailer" width="532" height="258" loading="lazy"></div>
+        <div class="media m1" data-unveil><img src="img/mobile-night.jpg" alt="Kids playing in the Mobile Ball Hockey Arena at an evening school event" width="1600" height="1200" loading="lazy" style="object-position:50% 72%"></div>
         <ul class="who" data-r>
           <li>Public &amp; private schools <span>PE classes and field days</span></li>
           <li>Churches <span>Youth groups and family nights</span></li>
@@ -802,7 +865,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
           <p>On the Arena Project YouTube channel</p>
         </a>
         <a class="vid" data-cursor="Play" href="https://www.youtube.com/watch?v=y5YXTAuASm4" target="_blank" rel="noopener" data-r>
-          <div class="media"><img src="img/mike-pro.jpg" alt="" width="732" height="516" loading="lazy" style="object-position:42% 40%"><span class="play"><b><svg><use href="#i-play"/></svg></b>Play on YouTube</span></div>
+          <div class="media"><img src="img/beach-video.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play"><b><svg><use href="#i-play"/></svg></b>Play on YouTube</span></div>
           <h3>Bringing Hockey to the Beach</h3>
           <p>Highlight video</p>
         </a>
@@ -827,7 +890,10 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
 
   <section class="sec sandbg" aria-label="From our founder">
     <div class="wrap quote">
-      <div class="media" data-unveil><img src="img/mike.jpg" alt="Michael Völlmin, President and Founder" width="732" height="915" loading="lazy"></div>
+      <div class="quote-pics">
+        <div class="media" data-unveil><img src="img/mike.jpg" alt="Michael Völlmin, President and Founder" width="732" height="915" loading="lazy"></div>
+        <figure class="q-inset" data-r><div class="media"><img src="img/mike-pro.jpg" alt="Mike playing pro hockey in Switzerland" width="732" height="516" loading="lazy" style="object-position:42% 45%"></div><figcaption>A decade as a pro in Switzerland</figcaption></figure>
+      </div>
       <blockquote>
         <span class="qmark" aria-hidden="true">“</span>
         <p data-r>This project will be much more than just hockey, as sport tends to be. It’s going to galvanize the community and change a lot of lives for the better.</p>
@@ -879,7 +945,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
         <h1 class="d h1" data-head-lines><span class="ln"><span>The rink</span></span><span class="ln"><span>comes</span></span><span class="ln"><span>to you.</span></span></h1>
         <span class="pnum" aria-hidden="true">01</span>
         <div class="ph-text"><p class="lead">Our Mobile Ball Hockey Arena brings the sport to schools and community groups across the Cape Fear region. No ice and no experience needed.</p><div class="actions"><span class="mag"><a class="btn btn-red" href="https://docs.google.com/forms/d/e/1FAIpQLSeOU4HEkbp9ietV7QNJFbzRzogWP68186H63nCCstZDeb57dg/viewform" target="_blank" rel="noopener">Request a booking <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a></span></div></div>
-        <div class="media ph-media" style="--w:691px;--a:532/258" data-unveil><img src="img/kids-group-2.jpg" alt="Students cheering with sticks raised at a mobile arena session" width="532" height="258"></div>
+        <div class="media ph-media" style="--w:691px;--a:2/1" data-unveil><img src="img/mobile-team.jpg" alt="Students holding their sticks in the air in front of the mobile arena trailer" width="1672" height="471" style="object-position:50% 40%"></div>
       </div>
     </div>
   </section>
@@ -887,14 +953,24 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
     <div class="wrap">
       <div class="launch" data-r>
         <div><i class="dot"></i><span class="k">Launched Sept 17, 2026</span><p>The program kicked off to bring ball hockey to young people around the region.</p></div>
-        <div><i class="dot"></i><span class="k">Nearly 100 students</span><p>First sessions at the Children’s Museum of Wilmington and GLOW Academy, many playing for the first time.</p></div>
+        <div><i class="dot"></i><span class="k">1,000+ students</span><p>Kids have played in our mobile arena, starting with first sessions at the Children’s Museum of Wilmington and GLOW Academy.</p></div>
         <div><i class="dot"></i><span class="k">Backed locally</span><p>Supported by Novant Health, EmergeOrtho and the YMCA of Southeastern North Carolina.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec paper">
+    <div class="wrap coach">
+      <div class="media" data-unveil><img src="img/angelo-coach.jpg" alt="Coach Angelo Terrana talking with Team USA players on the bench" width="586" height="562" loading="lazy"></div>
+      <div class="coach-copy" data-r>
+        <span class="label">Head coach</span>
+        <h2 class="d h2">Angelo Terrana</h2>
+        <p class="lead">Angelo is the head coach of our Mobile Ball Hockey Arena. He is also the coach and general manager of the Team USA women’s ball hockey team, so the kids who step into our rink learn from a coach at the top of the sport.</p>
       </div>
     </div>
   </section>
   <section class="dark sec">
     <div class="wrap pull">
-      <div class="media" data-unveil><img src="img/kids-group.jpg" alt="Students in purple shirts with sticks raised" width="585" height="212" loading="lazy"></div>
+      <div class="media" data-unveil><img src="img/mobile-girl.jpg" alt="A student dribbling a ball through cones in the mobile arena" width="832" height="461" loading="lazy" style="object-position:50% 45%"></div>
       <blockquote>
         <p data-r>This program is about meeting kids where they are and showing them a sport and a community that believes in them.</p>
         <cite data-r><b>Michael Völlmin</b>Founder</cite>
@@ -934,15 +1010,15 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
   </section>
 </div>
 
-<!-- ======================= EVENTS ======================= -->
-<div class="view" id="v-events" data-view="events">
+<!-- ======================= TIMELINE ======================= -->
+<div class="view" id="v-timeline" data-view="timeline">
   <section class="phead">
     <div class="wrap">
-      <div class="crumb" data-head><a href="#home">Home</a><i></i><span>Events</span></div>
+      <div class="crumb" data-head><a href="#home">Home</a><i></i><span>Timeline</span></div>
       <div class="phead-grid">
-        <h1 class="d h1" data-head-lines><span class="ln"><span>Where we</span></span><span class="ln"><span>show up.</span></span></h1>
+        <h1 class="d h1" data-head-lines><span class="ln"><span>How we</span></span><span class="ln"><span>got here.</span></span></h1>
         <span class="pnum" aria-hidden="true">02</span>
-        <div class="ph-text"><p class="lead">Watch parties, tournaments, fundraisers and pop-up rinks. Here’s what we’ve been up to.</p></div>
+        <div class="ph-text"><p class="lead">From our first public event to the mobile arena, here’s the project so far, and what’s coming next.</p></div>
         <div class="media ph-media" style="--w:835px;--a:643/300" data-unveil><img src="img/watch-cheer.jpg" alt="Fans cheering at the Arena Rising watch party" width="643" height="300"></div>
       </div>
     </div>
@@ -963,11 +1039,18 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
       <div class="tline" data-tline>
         <span class="rail" aria-hidden="true"><i></i></span>
         <article class="ev">
+          <div class="ev-when"><time datetime="2027">Spring 2027</time><span>Coming up</span></div>
+          <div class="ev-body" data-r>
+            <h3>NHL Street youth ball hockey</h3>
+            <p>A structured youth ball hockey program arrives in Wilmington, building on the mobile arena.</p>
+          </div>
+        </article>
+        <article class="ev">
           <div class="ev-when"><time datetime="2026-09-17">Sept 17, 2026</time><span>Across the region</span></div>
           <div class="ev-body" data-r>
             <h3>Mobile Ball Hockey Arena launch</h3>
             <p>The mobile arena rolled out with first sessions at the Children’s Museum of Wilmington and GLOW Academy, introducing nearly 100 students to the sport.</p>
-            <div class="ev-media"><div class="media"><img src="img/kids-group.jpg" alt="Students with ball hockey sticks" width="585" height="212" loading="lazy" style="object-position:30% 50%"></div><div class="media"><img src="img/kids-group-2.jpg" alt="Students cheering with sticks" width="532" height="258" loading="lazy"></div></div>
+            <div class="ev-media one"><div class="media"><img src="img/kids-group.jpg" alt="Students with ball hockey sticks raised at a first session" width="585" height="212" loading="lazy" style="object-position:50% 40%"></div></div>
           </div>
         </article>
         <article class="ev">
@@ -992,6 +1075,8 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
           <div class="ev-body" data-r>
             <h3>Our first public event</h3>
             <p>Live music, a former NHL guest and over $4,000 in raffle prizes donated by local businesses.</p>
+            <div class="ev-media"><div class="media"><img src="img/watermans-1.jpg" alt="Supporters waving at the event at Waterman’s Brewing" width="1280" height="720" loading="lazy" style="object-position:50% 30%"></div><div class="media"><img src="img/watermans-2.jpg" alt="Guests talking on the patio at Waterman’s Brewing" width="1280" height="720" loading="lazy"></div></div>
+            <div><a class="tl" href="https://www.youtube.com/watch?v=y5YXTAuASm4" target="_blank" rel="noopener">Watch the highlight video <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a></div>
           </div>
         </article>
       </div>
@@ -1021,8 +1106,8 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
   <section class="sec paper">
     <div class="wrap">
       <div class="sec-top">
-        <h2 class="d h2" data-lines><span class="ln"><span>Meet the</span></span><span class="ln"><span>founders.</span></span></h2>
-        <p class="lead" data-r>Lifelong friends and local hockey advocates, united to build a lasting home for hockey in Wilmington.</p>
+        <h2 class="d h2" data-lines><span class="ln"><span>Meet the</span></span><span class="ln"><span>leaders.</span></span></h2>
+        <p class="lead" data-r>Lifelong friends, local advocates and a world-class coach, united to build a lasting home for sport in Wilmington.</p>
       </div>
       <article class="founder">
         <div class="swap" data-cursor="Flip" tabindex="0" role="button" aria-pressed="false" aria-label="Show Mike playing pro hockey" data-r>
@@ -1048,6 +1133,15 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
           <h3 class="d">Kyler Harding</h3>
           <p>Wilmington born and raised, Kyler played a key role in launching the project’s first public event, securing over $4,000 in donated raffle prizes through local sponsorship outreach. He brings energy, determination and a strong local network to the project.</p>
           <div class="actions"><a class="tl" href="https://www.linkedin.com/in/kyler-harding-329a05208/" target="_blank" rel="noopener">LinkedIn <span class="ar ne"><svg><use href="#i-ne"/></svg><svg><use href="#i-ne"/></svg></span></a><a class="tl" href="#contact">Contact Kyler <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
+        </div>
+      </article>
+      <article class="founder">
+        <div class="fpic" data-r><div class="media"><img src="img/angelo-trophy.jpg" alt="Angelo Terrana holding the women’s first place trophy from the Ball Hockey World Championship" width="460" height="560" loading="lazy" style="object-position:50% 20%"></div></div>
+        <div class="founder-copy" data-r>
+          <span class="role">Head Coach, Mobile Ball Hockey Arena</span>
+          <h3 class="d">Angelo Terrana</h3>
+          <p>Angelo leads the coaching in our Mobile Ball Hockey Arena. He is also the coach and general manager of the Team USA women’s ball hockey team.</p>
+          <div class="actions"><a class="tl" href="#mobile-arena">See the mobile arena <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></div>
         </div>
       </article>
     </div>
@@ -1230,8 +1324,8 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
 <footer class="foot">
   <div class="wrap">
     <div class="f-top">
-      <div style="display:grid;gap:20px;align-content:start;justify-items:start"><img src="img/logo-white.png" alt="The Wilmington Arena Project" width="670" height="335" loading="lazy"><p>Working toward Wilmington, North Carolina’s first multi-purpose arena.</p></div>
-      <div class="f-col"><h4>Explore</h4><a href="#mobile-arena">Mobile Arena</a><a href="#events">Events</a><a href="#about">About</a><a href="#get-involved">Get Involved</a></div>
+      <div style="display:grid;gap:20px;align-content:start;justify-items:start"><img src="img/logo-white.png" alt="The Wilmington Arena Project" width="1000" height="502" loading="lazy"><p>Working toward Wilmington, North Carolina’s first multi-purpose arena.</p></div>
+      <div class="f-col"><h4>Explore</h4><a href="#mobile-arena">Mobile Arena</a><a href="#timeline">Timeline</a><a href="#about">About</a><a href="#get-involved">Get Involved</a></div>
       <div class="f-col"><h4>Support</h4><a href="#donate">Donate</a><a href="https://givebutter.com/c/arenarising" target="_blank" rel="noopener">Givebutter</a><a href="https://gofund.me/559e80782" target="_blank" rel="noopener">GoFundMe</a><a href="https://www.bonfire.com/store/the-wilmington-arena-project-merchandise-shop/" target="_blank" rel="noopener">Merch shop</a></div>
       <div class="f-col"><h4>Contact</h4><span>michael@wilmingtonarenaproject.com</span><span>(910) 319-1052</span><a href="https://www.youtube.com/channel/UCMXsMUkWm6Ts63TWS901gPA" target="_blank" rel="noopener">YouTube</a><a href="#contact">Send a message</a></div>
     </div>
@@ -1253,9 +1347,9 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
 
   /* ---------- routing ---------- */
   var views=$$('.view'), names=views.map(function(v){return v.dataset.view});
-  var titles={home:'','mobile-arena':'Mobile Arena','events':'Events','about':'About','get-involved':'Get Involved','donate':'Donate','contact':'Contact'};
+  var titles={home:'','mobile-arena':'Mobile Arena','timeline':'Timeline','about':'About','get-involved':'Get Involved','donate':'Donate','contact':'Contact'};
   var main=$('#main'), current=null, inited={}, first=true;
-  function routeName(){var h=(location.hash||'').slice(1);return names.indexOf(h)<0?'home':h}
+  function routeName(){var h=(location.hash||'').slice(1);if(h==='events')h='timeline';return names.indexOf(h)<0?'home':h}
   function setNav(n){
     $$('.nav a.nl, .mm nav a').forEach(function(a){ if(a.getAttribute('href')==='#'+n) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
     document.title=(titles[n]?titles[n]+' · ':'')+'The Wilmington Arena Project';
