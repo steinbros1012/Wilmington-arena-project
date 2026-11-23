@@ -598,6 +598,13 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
 }
 
 /* nov 23 edits */
+.hero-tag{display:block;margin-top:.5em;font-family:var(--f-s);font-weight:400;text-transform:none;letter-spacing:0;font-size:clamp(1.4rem,.3em,2.5rem);line-height:1.15;color:var(--ink-2)}
+.now-fig{margin:0;display:grid;gap:12px}
+.now-fig figcaption{font-size:13px;line-height:1.45;color:var(--muted);max-width:60ch}
+.ev-media.kd{grid-template-columns:1fr 1fr}
+.ev-media.kd .media{aspect-ratio:1/1}
+.spons a{grid-column:1/-1;flex-direction:row;align-items:center;min-height:0}
+@media (max-width:760px){.ev-media.kd{grid-template-columns:1fr 1fr}.spons a{min-height:0}}
 @media (max-width:560px){.hero-inset figcaption span+span{display:none}}
 .brand img{height:64px}
 .hdr.scrolled .brand img{height:52px}
@@ -707,11 +714,12 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
         <h1 class="d hero-h" id="hero-h">
           <span class="ln"><span>Wilmington’s</span></span>
           <span class="ln"><span>first</span></span>
-          <span class="ln"><span>multi-purpose</span></span>
+          <span class="ln"><span>multipurpose</span></span>
           <span class="ln"><span>arena.</span></span>
+          <span class="hero-tag">A community vision taking shape.</span>
         </h1>
         <div class="hero-copy">
-          <p class="lead" data-hero>A community-owned nonprofit building a home for sport, education and shared experiences, and bringing people together across the Cape Fear region right now.</p>
+          <p class="lead" data-hero>A community-owned nonprofit building a home for sport, education and shared experiences, through grassroots initiative and community alignment.</p>
           <div class="actions" data-hero>
             <span class="mag"><a class="btn btn-red btn-lg" href="#donate">Donate <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></span>
             <a class="btn btn-line btn-lg" href="#mobile-arena">Book the mobile arena</a>
@@ -774,7 +782,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
       </div>
       <div class="panels" data-r>
         <div class="panel" role="tabpanel" id="p-now" aria-labelledby="t-now">
-          <a class="media zoom" data-cursor="Open" href="#mobile-arena" aria-label="See the mobile arena" style="aspect-ratio:585/250"><img src="img/mobile-group.jpg" alt="A group of players with sticks on a ball hockey rink" width="1600" height="1200" loading="lazy" style="object-position:50% 62%"></a>
+          <figure class="now-fig"><a class="media zoom" data-cursor="Open" href="#mobile-arena" aria-label="See the mobile arena" style="aspect-ratio:585/250"><img src="img/mobile-group.jpg" alt="A group of players with sticks on a ball hockey rink" width="1600" height="1200" loading="lazy" style="object-position:50% 62%"></a><figcaption>Collaboration with Access of Wilmington, UNCW Men’s Hockey and the Wilmington Arena Project, 10.22.26</figcaption></figure>
           <div class="panel-copy">
             <span class="kicker">Right now</span>
             <p class="serif">Grassroots work across the Cape Fear region.</p>
@@ -892,7 +900,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
     <div class="wrap quote">
       <div class="quote-pics">
         <div class="media" data-unveil><img src="img/mike.jpg" alt="Michael Völlmin, President and Founder" width="732" height="915" loading="lazy"></div>
-        <figure class="q-inset" data-r><div class="media"><img src="img/mike-pro.jpg" alt="Mike playing pro hockey in Switzerland" width="732" height="516" loading="lazy" style="object-position:42% 45%"></div><figcaption>A decade as a pro in Switzerland</figcaption></figure>
+        <figure class="q-inset" data-r><div class="media"><img src="img/mike-pro.jpg" alt="Mike playing pro hockey in Switzerland" width="732" height="516" loading="lazy" style="object-position:42% 45%"></div><figcaption>Wilmington native; decade as a pro in Switzerland (dual citizen)</figcaption></figure>
       </div>
       <blockquote>
         <span class="qmark" aria-hidden="true">“</span>
@@ -917,6 +925,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
         <div class="sp"><img src="img/s-brookelynn.png" alt="Brookelynn Premium Cigars" loading="lazy"><span class="sn" aria-hidden="true">Brookelynn Premium Cigars</span></div>
         <div class="sp"><img src="img/s-45drives.png" alt="45Drives" loading="lazy"><span class="sn" aria-hidden="true">45Drives</span></div>
         <div class="sp"><img src="img/s-protocase.png" alt="Protocase" loading="lazy"><span class="sn" aria-hidden="true">Protocase</span></div>
+        <div class="sp"><img src="img/s-ncino.png" alt="nCino" loading="lazy"><span class="sn" aria-hidden="true">nCino</span></div>
         <a href="#contact"><span class="d">Become a sponsor</span><span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
       </div>
     </div>
@@ -1043,6 +1052,14 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
           <div class="ev-body" data-r>
             <h3>NHL Street youth ball hockey</h3>
             <p>A structured youth ball hockey program arrives in Wilmington, building on the mobile arena.</p>
+          </div>
+        </article>
+        <article class="ev">
+          <div class="ev-when"><time datetime="2026-11-01">Nov 1, 2026</time><span>Raleigh</span></div>
+          <div class="ev-body" data-r>
+            <h3>Carolina Hurricanes Kids Day</h3>
+            <p>We were invited by the Carolina Hurricanes Foundation to attend Hurricanes Kids Day, bringing ball hockey to young fans.</p>
+            <div class="ev-media kd"><div class="media"><img src="img/kidsday-1.jpg" alt="Kids playing ball hockey outside the arena at Hurricanes Kids Day" width="1140" height="1086" loading="lazy" style="object-position:50% 60%"></div><div class="media"><img src="img/kidsday-2.jpg" alt="A shooting drill at Hurricanes Kids Day by Carter-Finley Stadium" width="1140" height="1372" loading="lazy" style="object-position:50% 55%"></div></div>
           </div>
         </article>
         <article class="ev">
