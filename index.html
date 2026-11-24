@@ -6,11 +6,11 @@
 <meta name="theme-color" content="#F1F4F7">
 <link rel="icon" type="image/png" href="img/logo-navy.png">
 <meta property="og:title" content="The Wilmington Arena Project">
-<meta property="og:description" content="The Wilmington Arena Project is a community-owned nonprofit working toward Wilmington, North Carolina's first multipurpose arena.">
+<meta property="og:description" content="The Wilmington Arena Project is a registered 501(c)(3) nonprofit working toward Wilmington, North Carolina's first multipurpose arena.">
 <meta property="og:image" content="img/multipurpose.jpg">
 <meta property="og:type" content="website">
 <title>Wilmington Arena Project</title>
-<meta name="description" content="The Wilmington Arena Project is a community-owned nonprofit working toward Wilmington, North Carolina's first multipurpose arena.">
+<meta name="description" content="The Wilmington Arena Project is a registered 501(c)(3) nonprofit working toward Wilmington, North Carolina's first multipurpose arena.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600..900&family=Instrument+Sans:wdth,wght@75..100,400..700&family=Instrument+Serif&display=swap">
@@ -651,6 +651,35 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
   .hero-inset-2{width:46%;left:-4px;bottom:15%}
   .hero-inset-2 figcaption span:last-child{display:none}
 }
+/* ---------- round 3: bigger concept photo, visible sponsor logos ---------- */
+@media (min-width:901px){.hero-grid{grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr)}}
+.hero-h{font-size:clamp(3rem,6.2vw,7rem)}
+.hero-art{aspect-ratio:auto;max-width:none;display:grid;grid-template-columns:3% 1.39fr 1fr 3%;column-gap:clamp(10px,1.4vw,18px);align-items:end}
+.hero-art .rink{inset:-4% 0}
+.hero-ph{position:relative;inset:auto;grid-column:1/-1;width:100%;aspect-ratio:1672/941}
+.hero-ph img{object-position:50% 50%}
+.hero-inset,.hero-inset-2{position:relative;inset:auto;width:auto;margin-top:clamp(-30px,-2vw,-14px)}
+.hero-inset-2{grid-column:2}
+.hero-inset:not(.hero-inset-2){grid-column:3}
+.hero-inset-2 .media{aspect-ratio:1600/739}
+.hero-inset-2 .media img{object-position:50% 50%}
+.hero-inset figcaption span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spons{grid-template-columns:repeat(5,1fr)}
+.spons .sp{background:#fff}
+.spons img{filter:none;opacity:1;mix-blend-mode:normal;height:clamp(50px,5vw,74px);width:78%}
+.spons .sp.major{min-height:clamp(140px,15vw,200px)}
+.spons .sp.major img{height:clamp(56px,6vw,88px)}
+@media (max-width:900px){
+  .hero-art{max-width:720px;width:100%;justify-self:center}
+  .hero-h{font-size:clamp(3rem,13vw,6.4rem)}
+}
+@media (max-width:760px){.spons{grid-template-columns:repeat(2,1fr)}.spons .sp,.spons .sp.major{min-height:118px}.spons img,.spons .sp.major img{height:54px;width:84%}}
+@media (max-width:560px){
+  .hero-art{grid-template-columns:0 1.39fr 1fr 0;column-gap:8px}
+  .hero-inset,.hero-inset-2{width:auto;padding:4px 4px 0}
+  .hero-inset figcaption{font-size:10.5px;padding:7px 3px 8px}
+  .hero-inset figcaption span:first-child::before{width:6px;height:6px;margin-right:6px}
+}
 </style>
 </head>
 <body>
@@ -719,7 +748,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
           <span class="hero-tag">A community vision taking shape.</span>
         </h1>
         <div class="hero-copy">
-          <p class="lead" data-hero>A community-owned nonprofit building a home for sport, education and shared experiences, through grassroots initiative and community alignment.</p>
+          <p class="lead" data-hero>A registered 501(c)(3) nonprofit building a home for sport, education and shared experiences, through grassroots initiatives and community alignment.</p>
           <div class="actions" data-hero>
             <span class="mag"><a class="btn btn-red btn-lg" href="#donate">Donate <span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a></span>
             <a class="btn btn-line btn-lg" href="#mobile-arena">Book the mobile arena</a>
@@ -730,15 +759,15 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
             <i class="cl"></i>
             <svg viewBox="0 0 100 100"><circle class="c1" cx="50" cy="50" r="46" fill="none" stroke="#2D64B6" stroke-width=".32" pathLength="1"/><circle cx="50" cy="50" r="1.1" fill="#2D64B6"/></svg>
           </div>
-          <div class="media hero-ph" data-speed=".92"><img src="img/multipurpose.jpg" alt="Concept image of the arena hosting basketball, a concert, a rodeo, monster trucks, a circus, hockey and a boat show" width="1672" height="941" fetchpriority="high"></div>
-          <figure class="hero-inset hero-inset-2" data-speed="1.06"><div class="media"><img src="img/mobile-rink.jpg" alt="The Mobile Ball Hockey Arena set up in a parking lot with its trailer" width="1600" height="1200"></div><figcaption><span>Mobile Arena</span><span>On the road</span></figcaption></figure>
-          <figure class="hero-inset" data-speed="1.12"><div class="media"><img src="img/crowd-lawn.jpg" alt="Fans in lawn chairs at the Arena Rising watch party" width="465" height="300"></div><figcaption><span>Arena Rising</span><span>Apr 25, 2026</span></figcaption></figure>
+          <div class="media hero-ph"><img src="img/multipurpose.jpg" alt="Concept image of the arena hosting basketball, a concert, a rodeo, monster trucks, a circus, hockey and a boat show" width="1672" height="941" fetchpriority="high"></div>
+          <figure class="hero-inset hero-inset-2"><div class="media"><img src="img/mobile-collage.jpg" alt="The Mobile Ball Hockey Arena: the rink, its trailer and groups of kids with their sticks" width="1600" height="739"></div><figcaption><span>Mobile Ball Hockey Arena</span><span>On the road</span></figcaption></figure>
+          <figure class="hero-inset"><div class="media"><img src="img/crowd-lawn.jpg" alt="Fans in lawn chairs at the Arena Rising watch party" width="465" height="300"></div><figcaption><span>Arena Rising</span><span>Apr 25, 2026</span></figcaption></figure>
         </div>
       </div>
     </div>
     <div class="wrap">
       <div class="hero-foot" data-hero>
-        <div class="meta"><span>Founded 2024</span><span>Community-owned nonprofit</span><span>Cape Fear region, NC</span></div>
+        <div class="meta"><span>Founded 2024</span><span>Registered 501(c)(3) nonprofit</span><span>Cape Fear region, NC</span></div>
         <span class="cue" aria-hidden="true">Scroll <i></i></span>
       </div>
     </div>
@@ -763,7 +792,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
       <dl class="stats" data-r>
         <div><dt class="d"><span data-count="1000">1,000</span>+</dt><dd>Students have played in our Mobile Ball Hockey Arena</dd></div>
         <div><dt class="d"><span data-count="500">500</span>+</dt><dd>Members, volunteers and supporters</dd></div>
-        <div><dt class="d">2024</dt><dd>The year the community-owned nonprofit was founded</dd></div>
+        <div><dt class="d">2024</dt><dd>The year the nonprofit was founded</dd></div>
       </dl>
       </div>
     </div>
@@ -918,14 +947,16 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
         <p class="lead" data-r>Thank you to the sponsors and supporters who make the work possible.</p>
       </div>
       <div class="spons" data-r>
-        <div class="sp"><img src="img/s-novant.png" alt="Novant Health" loading="lazy"><span class="sn" aria-hidden="true">Novant Health</span></div>
+        <div class="sp major"><img src="img/s-novant.png" alt="Novant Health" loading="lazy"><span class="sn" aria-hidden="true">Novant Health</span></div>
+        <div class="sp major"><img src="img/s-ncino.png" alt="nCino" loading="lazy"><span class="sn" aria-hidden="true">nCino</span></div>
+        <div class="sp major"><img src="img/s-marine-fcu.png" alt="Marine Federal Credit Union" loading="lazy"><span class="sn" aria-hidden="true">Marine Federal Credit Union</span></div>
+        <div class="sp major"><img src="img/s-usa-ball-hockey.png" alt="USA Ball Hockey" loading="lazy"><span class="sn" aria-hidden="true">USA Ball Hockey</span></div>
+        <div class="sp major"><img src="img/s-ymca.png" alt="YMCA" loading="lazy"><span class="sn" aria-hidden="true">YMCA</span></div>
         <div class="sp"><img src="img/s-emergeortho.png" alt="EmergeOrtho Charitable Fund" loading="lazy"><span class="sn" aria-hidden="true">EmergeOrtho</span></div>
-        <div class="sp"><img src="img/s-marine-fcu.png" alt="Marine Federal Credit Union" loading="lazy"><span class="sn" aria-hidden="true">Marine Federal Credit Union</span></div>
         <div class="sp"><img src="img/s-carolina-storage.png" alt="Carolina Storage" loading="lazy"><span class="sn" aria-hidden="true">Carolina Storage</span></div>
         <div class="sp"><img src="img/s-brookelynn.png" alt="Brookelynn Premium Cigars" loading="lazy"><span class="sn" aria-hidden="true">Brookelynn Premium Cigars</span></div>
         <div class="sp"><img src="img/s-45drives.png" alt="45Drives" loading="lazy"><span class="sn" aria-hidden="true">45Drives</span></div>
         <div class="sp"><img src="img/s-protocase.png" alt="Protocase" loading="lazy"><span class="sn" aria-hidden="true">Protocase</span></div>
-        <div class="sp"><img src="img/s-ncino.png" alt="nCino" loading="lazy"><span class="sn" aria-hidden="true">nCino</span></div>
         <a href="#contact"><span class="d">Become a sponsor</span><span class="ar"><svg><use href="#i-ar"/></svg><svg><use href="#i-ar"/></svg></span></a>
       </div>
     </div>
@@ -1116,7 +1147,7 @@ a:hover .media.zoom img,a.media.zoom:hover img{transform:scale(1.045)}
   </section>
   <section style="padding-bottom:var(--sec)">
     <div class="wrap vision">
-      <div data-r><span class="kicker">The vision</span><p class="serif">A 10,000-seat multipurpose arena for Wilmington, NC.</p><p>As a community-owned nonprofit founded in 2024, our vision is to uplift our youth through sports, education programs and health. Housing professional ice hockey and basketball, the arena will increase community togetherness and boost our local economy.</p></div>
+      <div data-r><span class="kicker">The vision</span><p class="serif">A 10,000-seat multipurpose arena for Wilmington, NC.</p><p>As a registered 501(c)(3) nonprofit founded in 2024, our vision is to uplift our youth through sports, education programs and health. Housing professional ice hockey and basketball, the arena will increase community togetherness and boost our local economy.</p></div>
       <div data-r><span class="kicker">The work today</span><p class="serif">Investing in the community now.</p><p>While we work toward that long-term vision, we run grassroots programming, youth initiatives, mobile activations, community events and public watch parties that bring people together, promote healthy lifestyles and strengthen community pride throughout the Cape Fear region.</p></div>
     </div>
   </section>
